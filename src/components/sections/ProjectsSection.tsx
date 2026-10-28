@@ -87,7 +87,7 @@ function ProjectCard({
   index: number;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
     <motion.a
@@ -95,15 +95,15 @@ function ProjectCard({
       href={project.figmaUrl}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{
-        duration: 0.6,
-        delay: index * 0.1,
+        duration: 0.5,
+        delay: index * 0.08,
         ease: [0.16, 1, 0.3, 1] as const,
       }}
-      whileHover={{ y: -6, transition: { duration: 0.2 } }}
-      className="group relative block bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-3xl p-7 sm:p-8 hover:border-white/20 hover:bg-white/[0.05] transition-all duration-300 overflow-hidden"
+      whileHover={{ y: -4, transition: { duration: 0.2 } }}
+      className="group relative block bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 hover:border-white/20 hover:bg-white/[0.05] active:bg-white/[0.07] transition-all duration-300 overflow-hidden"
     >
       {/* Top accent bar */}
       <div
@@ -115,54 +115,54 @@ function ProjectCard({
 
       {/* Hover glow */}
       <div
-        className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-3xl"
+        className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-3xl pointer-events-none"
         style={{ backgroundColor: project.accent }}
       />
 
       {/* Content */}
       <div className="relative z-10">
         {/* Company & Arrow */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3.5 sm:mb-4">
           <div className="flex items-center gap-2">
             <div
-              className="w-2 h-2 rounded-full"
+              className="w-2 h-2 rounded-full shrink-0"
               style={{ backgroundColor: project.accent }}
             />
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <span className="text-[11px] sm:text-xs font-semibold text-gray-400 uppercase tracking-wider">
               {project.company}
             </span>
           </div>
-          <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-            <ArrowUpRight className="w-4 h-4" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 group-hover:bg-white/10 group-hover:text-white transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0">
+            <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </div>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 group-hover:text-white transition-colors">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-white transition-colors leading-snug">
           {project.title}
         </h3>
         <p
-          className="text-sm font-medium mb-4"
+          className="text-xs sm:text-sm font-medium mb-3 sm:mb-4"
           style={{ color: project.accent }}
         >
           {project.subtitle}
         </p>
 
         {/* Description */}
-        <p className="text-sm text-gray-400 leading-relaxed mb-6 line-clamp-3">
+        <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-5 sm:mb-6 line-clamp-3">
           {project.description}
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-xs font-medium rounded-full border"
+              className="px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium rounded-full border"
               style={{
                 color: project.accent,
-                backgroundColor: `${project.accent}10`,
-                borderColor: `${project.accent}20`,
+                backgroundColor: `${project.accent}12`,
+                borderColor: `${project.accent}25`,
               }}
             >
               {tag}
@@ -176,41 +176,40 @@ function ProjectCard({
 
 export default function ProjectsSection() {
   const headerRef = useRef(null);
-  const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
+  const isHeaderInView = useInView(headerRef, { once: true, margin: "-80px" });
 
   return (
-    <section id="projects" className="py-24 sm:py-32 relative">
+    <section id="projects" className="py-16 sm:py-24 lg:py-32 relative overflow-hidden">
       {/* Background gradient */}
       <div
         aria-hidden="true"
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full opacity-[0.05] pointer-events-none blur-3xl"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] sm:w-[800px] h-[200px] sm:h-[400px] rounded-full opacity-[0.05] pointer-events-none blur-3xl"
         style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-6">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <motion.header
           ref={headerRef}
-          initial={{ opacity: 0, y: 32 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+          className="text-center mb-10 sm:mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-white/5 text-blue-400 text-sm font-semibold rounded-full mb-4 border border-white/10">
+          <span className="inline-block px-3.5 py-1 sm:px-4 sm:py-1.5 bg-white/5 text-blue-400 text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-white/10">
             Portfolio
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Featured{" "}
-            <span className="gradient-text">Projects</span>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 tracking-tight">
+            Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-gray-400 max-w-lg mx-auto text-base leading-relaxed">
+          <p className="text-gray-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
             A selection of projects I&rsquo;ve led or contributed to — spanning
             product design, UX research, and design systems.
           </p>
         </motion.header>
 
         {/* Project grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -221,18 +220,18 @@ export default function ProjectsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-10 sm:mt-14 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
-            <div className="w-8 h-8 bg-[#F24E1E] rounded-lg flex items-center justify-center">
+          <div className="inline-flex items-center gap-3 px-4 sm:px-6 py-3 bg-white/5 rounded-2xl border border-white/10 max-w-full text-left">
+            <div className="w-8 h-8 bg-[#F24E1E] rounded-lg flex items-center justify-center shrink-0">
               <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49 2.014-4.49 4.49s2.014 4.49 4.49 4.49h4.588c2.476 0 4.49-2.014 4.49-4.49s-2.014-4.49-4.49-4.49zm-4.587 7.51h3.117v-6.038H8.148c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019zm.001 1.471h3.117v3.117c0 1.665-1.355 3.019-3.019 3.019s-3.019-1.355-3.019-3.019 1.354-3.019 3.019-3.019h-.098z" />
               </svg>
             </div>
-            <div className="text-left">
-              <p className="text-sm font-semibold text-white">Click any project card</p>
-              <p className="text-xs text-gray-500">Opens the design file in Figma</p>
+            <div className="min-w-0">
+              <p className="text-xs sm:text-sm font-semibold text-white">Click any project card</p>
+              <p className="text-[11px] sm:text-xs text-gray-400">Opens the design prototype in Figma</p>
             </div>
           </div>
         </motion.div>

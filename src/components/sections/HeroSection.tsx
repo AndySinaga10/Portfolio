@@ -8,7 +8,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.15 },
   },
 };
 
@@ -28,33 +28,27 @@ const bentoVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      delay: 0.4 + i * 0.1,
+      delay: 0.3 + i * 0.1,
       ease: [0.16, 1, 0.3, 1] as const,
     },
   }),
 };
 
-const stats = [
-  { value: "9+", label: "Years Experience", color: "from-blue-500 to-blue-600" },
-  { value: "20+", label: "Completed Projects", color: "from-violet-500 to-violet-600" },
-  { value: "15+", label: "Happy Clients", color: "from-emerald-500 to-emerald-600" },
-];
-
 export default function HeroSection() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center overflow-hidden pt-16"
+      className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20"
     >
       {/* Background gradient orbs */}
       <div
         aria-hidden="true"
-        className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none blur-3xl"
+        className="absolute -top-32 -right-32 sm:-top-40 sm:-right-40 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full opacity-20 pointer-events-none blur-3xl"
         style={{ background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)" }}
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full opacity-15 pointer-events-none blur-3xl"
+        className="absolute -bottom-32 -left-32 sm:-bottom-40 sm:-left-40 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] rounded-full opacity-15 pointer-events-none blur-3xl"
         style={{ background: "radial-gradient(circle, #8b5cf6 0%, transparent 70%)" }}
       />
 
@@ -64,22 +58,22 @@ export default function HeroSection() {
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
+          backgroundSize: "28px 28px",
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 w-full py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+          {/* Content Column */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-col gap-6 order-2 lg:order-1"
+            className="flex flex-col gap-5 sm:gap-6"
           >
             {/* Badge */}
             <motion.div variants={itemVariants}>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 text-gray-300 text-sm font-medium rounded-full border border-white/10">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-1.5 bg-white/5 text-gray-300 text-xs sm:text-sm font-medium rounded-full border border-white/10">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                 Available for work
               </span>
@@ -87,7 +81,7 @@ export default function HeroSection() {
 
             {/* Headline */}
             <motion.div variants={itemVariants}>
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] sm:leading-[1.1] tracking-tight">
                 Hi, I&rsquo;m{" "}
                 <span className="text-white">Andi Sinaga</span>
                 <br />
@@ -101,7 +95,7 @@ export default function HeroSection() {
 
             {/* Bio */}
             <motion.div variants={itemVariants}>
-              <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-lg">
+              <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
                 Senior UI/UX Designer with 8+ years of experience specializing in
                 user-centered design, prototyping, and design systems. Graduated from
                 the University of Indonesia majoring in Computer Science.
@@ -110,36 +104,39 @@ export default function HeroSection() {
 
             {/* Location */}
             <motion.div variants={itemVariants}>
-              <span className="inline-flex items-center gap-1.5 text-gray-500 text-sm">
-                <MapPin className="w-4 h-4" />
+              <span className="inline-flex items-center gap-1.5 text-gray-500 text-xs sm:text-sm">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" />
                 Jakarta, Indonesia
               </span>
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2"
+            >
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold rounded-2xl hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold text-sm sm:text-base rounded-2xl hover:shadow-lg hover:shadow-blue-500/25 active:scale-[0.98] transition-all duration-200"
               >
-                Explore Projects
+                <span>Explore Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/5 text-white font-semibold rounded-2xl border border-white/10 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 bg-white/5 text-white font-semibold text-sm sm:text-base rounded-2xl border border-white/10 hover:bg-white/10 active:scale-[0.98] transition-all duration-200"
               >
                 <Download className="w-4 h-4" />
-                Download Resume
+                <span>Download Resume</span>
               </a>
             </motion.div>
           </motion.div>
 
-          {/* Right: Modern Bento Grid */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
+          {/* Bento Grid Column */}
+          <div className="flex justify-center lg:justify-end w-full">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md sm:max-w-lg">
               {/* Stat 1: Years Experience */}
               <motion.div
                 custom={0}
@@ -147,17 +144,19 @@ export default function HeroSection() {
                 initial="hidden"
                 animate="visible"
                 whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:border-blue-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
+                className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-blue-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute -top-12 -right-12 w-28 h-28 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-300" />
+                <div className="absolute -top-12 -right-12 w-24 sm:w-28 h-24 sm:h-28 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-300" />
                 <div className="relative z-10">
-                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-3">
-                    <Sparkles className="w-5 h-5" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-2.5 sm:mb-3">
+                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     9<span className="text-blue-500">+</span>
                   </p>
-                  <p className="text-sm text-gray-400 mt-1 font-medium">Years Experience</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1 font-medium leading-tight">
+                    Years Experience
+                  </p>
                 </div>
               </motion.div>
 
@@ -168,10 +167,10 @@ export default function HeroSection() {
                 initial="hidden"
                 animate="visible"
                 whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                className="row-span-2 relative min-h-[300px] sm:min-h-[340px] rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent hover:border-white/25 transition-all duration-300 group"
+                className="row-span-2 relative min-h-[220px] sm:min-h-[280px] md:min-h-[340px] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent hover:border-white/25 transition-all duration-300 group"
               >
                 {/* Subtle back ambient glow */}
-                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-tr from-blue-500/20 to-violet-500/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 sm:w-48 h-36 sm:h-48 bg-gradient-to-tr from-blue-500/20 to-violet-500/20 rounded-full blur-3xl pointer-events-none" />
 
                 <Image
                   src="/Andi.png"
@@ -179,17 +178,21 @@ export default function HeroSection() {
                   fill
                   className="object-cover object-top filter brightness-95 group-hover:brightness-105 group-hover:scale-105 transition-all duration-500"
                   priority
-                  sizes="(max-width: 640px) 50vw, 240px"
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 240px, 260px"
                 />
 
                 {/* Bottom glass badge */}
-                <div className="absolute bottom-4 left-3 right-3 z-10">
-                  <div className="px-3.5 py-2 bg-[#0a0a0f]/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-between">
-                    <div>
-                      <p className="text-xs font-bold text-white">Andi Sinaga</p>
-                      <p className="text-[10px] text-gray-400">UI/UX Lead</p>
+                <div className="absolute bottom-2.5 sm:bottom-4 left-2.5 sm:left-3 right-2.5 sm:right-3 z-10">
+                  <div className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 bg-[#0a0a0f]/85 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-between gap-1.5">
+                    <div className="min-w-0">
+                      <p className="text-[11px] sm:text-xs font-bold text-white truncate">
+                        Andi Sinaga
+                      </p>
+                      <p className="text-[9px] sm:text-[10px] text-gray-400 truncate">
+                        UI/UX Lead
+                      </p>
                     </div>
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                   </div>
                 </div>
               </motion.div>
@@ -201,17 +204,19 @@ export default function HeroSection() {
                 initial="hidden"
                 animate="visible"
                 whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:border-violet-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
+                className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-violet-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute -top-12 -right-12 w-28 h-28 bg-violet-500/10 rounded-full blur-2xl group-hover:bg-violet-500/20 transition-all duration-300" />
+                <div className="absolute -top-12 -right-12 w-24 sm:w-28 h-24 sm:h-28 bg-violet-500/10 rounded-full blur-2xl group-hover:bg-violet-500/20 transition-all duration-300" />
                 <div className="relative z-10">
-                  <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 mb-3">
-                    <ArrowRight className="w-5 h-5" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 mb-2.5 sm:mb-3">
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     20<span className="text-violet-500">+</span>
                   </p>
-                  <p className="text-sm text-gray-400 mt-1 font-medium">Completed Projects</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1 font-medium leading-tight">
+                    Completed Projects
+                  </p>
                 </div>
               </motion.div>
 
@@ -222,18 +227,22 @@ export default function HeroSection() {
                 initial="hidden"
                 animate="visible"
                 whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-                className="col-span-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-4 sm:p-5 flex items-center justify-between hover:border-white/20 transition-all"
+                className="col-span-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-5 flex items-center justify-between gap-2 hover:border-white/20 transition-all"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
                     <Sparkles className="w-4 h-4" />
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">15+ Happy Clients</p>
-                    <p className="text-xs text-gray-400">Enterprise, Government & Startups</p>
+                  <div className="min-w-0">
+                    <p className="text-xs sm:text-sm font-semibold text-white truncate">
+                      15+ Happy Clients
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-gray-400 truncate">
+                      Enterprise, Government &amp; Startups
+                    </p>
                   </div>
                 </div>
-                <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-white/5 rounded-full border border-white/10 text-xs text-gray-300">
+                <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-[11px] text-gray-300 shrink-0">
                   <span>Universitas Indonesia</span>
                 </div>
               </motion.div>
