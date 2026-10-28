@@ -94,7 +94,7 @@ export default function SkillsSection() {
   const isProcessInView = useInView(processRef, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="py-24 sm:py-32 relative">
+    <section id="skills" className="py-24 sm:py-32 relative">
       {/* Background accent */}
       <div
         aria-hidden="true"
@@ -115,7 +115,7 @@ export default function SkillsSection() {
             Expertise
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Experience &{" "}
+            Skills &{" "}
             <span className="gradient-text">Expertise</span>
           </h2>
           <p className="text-gray-400 max-w-lg mx-auto text-base leading-relaxed">

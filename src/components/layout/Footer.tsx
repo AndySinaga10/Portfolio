@@ -24,7 +24,7 @@ export default async function Footer() {
 
           {/* Nav Links */}
           <div className="flex items-center gap-6">
-            {["About", "Projects", "Experience", "Contact"].map((link) => (
+            {["About", "Projects", "Experience", "Education", "Skills", "Contact"].map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
