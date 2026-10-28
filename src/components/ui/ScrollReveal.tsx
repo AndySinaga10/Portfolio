@@ -38,7 +38,7 @@ export default function ScrollReveal({
 
   return (
     <Component
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref as any}
       className={className}
       style={{
         opacity: isVisible ? 1 : 0,
