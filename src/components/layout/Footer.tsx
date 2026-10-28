@@ -1,14 +1,8 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import { Heart } from "lucide-react";
 
-export default function Footer() {
-  const [year, setYear] = useState(2026);
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+export default async function Footer() {
+  "use cache";
+  const year = new Date().getFullYear();
 
   return (
     <footer className="relative border-t border-white/[0.06]">
