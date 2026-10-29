@@ -124,7 +124,7 @@ export default function SkillsSection() {
         </motion.header>
 
         {/* Skills Grid */}
-        <div ref={skillsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 mb-14 sm:mb-20">
+        <div ref={skillsRef} className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-14 sm:mb-20">
           {skills.map((skill, i) => {
             const Icon = skill.icon;
             return (
@@ -138,18 +138,18 @@ export default function SkillsSection() {
                   ease: [0.16, 1, 0.3, 1] as const,
                 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-white/20 hover:bg-white/[0.05] transition-all duration-300"
+                className="group relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-xl sm:rounded-2xl p-3.5 sm:p-6 hover:border-white/20 hover:bg-white/[0.05] transition-all duration-300"
               >
                 {/* Icon */}
                 <div
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center mb-3 sm:mb-4"
+                  className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl flex items-center justify-center mb-2.5 sm:mb-4"
                   style={{ backgroundColor: `${skill.color}15` }}
                 >
-                  <Icon className="w-5 h-5" style={{ color: skill.color }} />
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: skill.color }} />
                 </div>
 
-                <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2">{skill.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                <h3 className="text-xs sm:text-base font-bold text-white mb-1 sm:mb-2 leading-snug">{skill.title}</h3>
+                <p className="text-[11px] sm:text-sm text-gray-400 leading-relaxed">
                   {skill.description}
                 </p>
               </motion.div>
@@ -169,7 +169,7 @@ export default function SkillsSection() {
             My Design Process
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {processSteps.map((step, i) => {
               const Icon = step.icon;
               return (

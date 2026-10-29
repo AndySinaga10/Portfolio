@@ -69,7 +69,7 @@ export default function HeroSection() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-col gap-5 sm:gap-6"
+            className="flex flex-col gap-5 sm:gap-8"
           >
             {/* Badge */}
             <motion.div variants={itemVariants}>
@@ -83,7 +83,7 @@ export default function HeroSection() {
             <motion.div variants={itemVariants}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] sm:leading-[1.1] tracking-tight">
                 Hi, I&rsquo;m{" "}
-                <span className="text-white">Andi Sinaga</span>
+                <span className="text-white">Andi</span>
                 <br />
                 <span className="gradient-text">Crafting Digital</span>
                 <br />
@@ -124,6 +124,7 @@ export default function HeroSection() {
               </a>
               <a
                 href="/resume.pdf"
+                download="Resume - Andi Yusup Sinaga.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 bg-white/5 text-white font-semibold text-sm sm:text-base rounded-2xl border border-white/10 hover:bg-white/10 active:scale-[0.98] transition-all duration-200"
