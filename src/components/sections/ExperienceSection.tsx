@@ -57,7 +57,7 @@ export default function ExperienceSection() {
         style={{ background: "radial-gradient(circle, #8b5cf6, transparent)" }}
       />
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-5xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

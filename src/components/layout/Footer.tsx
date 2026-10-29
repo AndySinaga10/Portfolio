@@ -9,7 +9,7 @@ export default async function Footer() {
       {/* Gradient top line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 py-8 sm:py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           {/* Brand */}
           <div className="flex items-center gap-3">

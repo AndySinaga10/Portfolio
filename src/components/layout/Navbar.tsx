@@ -37,13 +37,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || mobileOpen
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || mobileOpen
           ? "bg-[#0a0a0f]/85 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/30"
           : "bg-transparent"
-      }`}
+        }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="#about"
@@ -53,7 +52,7 @@ export default function Navbar() {
             AS
           </div>
           <span className="font-bold text-white text-base sm:text-lg tracking-tight">
-            Andi<span className="text-gray-400 font-normal">.design</span>
+            Andi<span className="text-gray-400 font-normal"> Sinaga</span>
           </span>
         </Link>
 
@@ -102,7 +101,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="md:hidden overflow-hidden bg-[#0a0a0f]/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl"
           >
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.label}

@@ -102,7 +102,7 @@ export default function SkillsSection() {
         style={{ background: "radial-gradient(circle, #8b5cf6, transparent)" }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.header
           ref={headerRef}

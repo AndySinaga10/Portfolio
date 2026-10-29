@@ -29,7 +29,7 @@ export default function EducationSection() {
         style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Andi Sinaga — UI/UX Product Designer",
   description:
-    "Senior UI/UX Designer with 8+ years of experience crafting digital products that create impact.",
+    "Senior UI/UX Designer with 9+ years of experience crafting digital products that create impact.",
   openGraph: {
     title: "Andi Sinaga — UI/UX Product Designer",
     description: "Senior UI/UX Designer crafting digital products that create impact.",

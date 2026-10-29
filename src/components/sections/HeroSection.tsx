@@ -62,7 +62,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 w-full">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Content Column */}
           <motion.div
@@ -96,7 +96,7 @@ export default function HeroSection() {
             {/* Bio */}
             <motion.div variants={itemVariants}>
               <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
-                Senior UI/UX Designer with 8+ years of experience specializing in
+                Senior UI/UX Designer with 9+ years of experience specializing in
                 user-centered design, prototyping, and design systems. Graduated from
                 the University of Indonesia majoring in Computer Science.
               </p>
@@ -134,118 +134,104 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Bento Grid Column */}
+          {/* Photo & Stats Column */}
           <div className="flex justify-center lg:justify-end w-full">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md sm:max-w-lg">
-              {/* Stat 1: Years Experience */}
+            <div className="flex flex-col gap-3 sm:gap-4 w-full max-w-sm sm:max-w-md">
+              {/* Photo Card */}
               <motion.div
                 custom={0}
                 variants={bentoVariants}
                 initial="hidden"
                 animate="visible"
-                whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-blue-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
-              >
-                <div className="absolute -top-12 -right-12 w-24 sm:w-28 h-24 sm:h-28 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-300" />
-                <div className="relative z-10">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-2.5 sm:mb-3">
-                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                    9<span className="text-blue-500">+</span>
-                  </p>
-                  <p className="text-xs sm:text-sm text-gray-400 mt-1 font-medium leading-tight">
-                    Years Experience
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Photo Bento Card: Spans 2 Rows on Right */}
-              <motion.div
-                custom={1}
-                variants={bentoVariants}
-                initial="hidden"
-                animate="visible"
-                whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                className="row-span-2 relative min-h-[220px] sm:min-h-[280px] md:min-h-[340px] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent hover:border-white/25 transition-all duration-300 group"
+                whileHover={{ scale: 1.01, y: -2, transition: { duration: 0.2 } }}
+                className="relative w-full aspect-[4/4.8] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent hover:border-white/25 transition-all duration-300 group shadow-2xl shadow-black/40"
               >
                 {/* Subtle back ambient glow */}
-                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 sm:w-48 h-36 sm:h-48 bg-gradient-to-tr from-blue-500/20 to-violet-500/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 h-48 sm:h-64 bg-gradient-to-tr from-blue-500/20 to-violet-500/20 rounded-full blur-3xl pointer-events-none" />
 
                 <Image
                   src="/Andi.png"
                   alt="Andi Sinaga - UI/UX Product Designer"
                   fill
-                  className="object-cover object-top filter brightness-95 group-hover:brightness-105 group-hover:scale-105 transition-all duration-500"
+                  className="object-cover object-center filter brightness-95 group-hover:brightness-105 group-hover:scale-105 transition-all duration-500"
+                  style={{ objectPosition: "center 48%" }}
                   priority
-                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 240px, 260px"
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 380px, 440px"
                 />
 
                 {/* Bottom glass badge */}
-                <div className="absolute bottom-2.5 sm:bottom-4 left-2.5 sm:left-3 right-2.5 sm:right-3 z-10">
-                  <div className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 bg-[#0a0a0f]/85 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-between gap-1.5">
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 z-10">
+                  <div className="px-3 sm:px-4 py-2 sm:py-2.5 bg-[#0a0a0f]/85 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-between gap-2 shadow-lg">
                     <div className="min-w-0">
-                      <p className="text-[11px] sm:text-xs font-bold text-white truncate">
+                      <p className="text-xs sm:text-sm font-bold text-white truncate">
                         Andi Sinaga
                       </p>
-                      <p className="text-[9px] sm:text-[10px] text-gray-400 truncate">
-                        UI/UX Lead
+                      <p className="text-[10px] sm:text-xs text-gray-400 truncate">
+                        Senior UI/UX Designer
                       </p>
                     </div>
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] text-gray-300 bg-white/5 rounded-full border border-white/10">
+                        Universitas Indonesia
+                      </span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse ring-4 ring-emerald-400/20" />
+                    </div>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Stat 2: Completed Projects */}
-              <motion.div
-                custom={2}
-                variants={bentoVariants}
-                initial="hidden"
-                animate="visible"
-                whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-violet-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
-              >
-                <div className="absolute -top-12 -right-12 w-24 sm:w-28 h-24 sm:h-28 bg-violet-500/10 rounded-full blur-2xl group-hover:bg-violet-500/20 transition-all duration-300" />
-                <div className="relative z-10">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 mb-2.5 sm:mb-3">
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              {/* Compact Stats Row */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full">
+                {/* Stat 1: Years Experience */}
+                <motion.div
+                  custom={1}
+                  variants={bentoVariants}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
+                  className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 hover:border-blue-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
+                >
+                  <div className="absolute -top-8 -right-8 w-16 h-16 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-300" />
+                  <div className="relative z-10 flex items-center gap-2.5 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                      <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-lg sm:text-2xl font-extrabold text-white tracking-tight leading-none">
+                        9<span className="text-blue-500">+</span>
+                      </p>
+                      <p className="text-[11px] sm:text-xs text-gray-400 font-medium mt-1 leading-tight truncate">
+                        Years Experience
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                    20<span className="text-violet-500">+</span>
-                  </p>
-                  <p className="text-xs sm:text-sm text-gray-400 mt-1 font-medium leading-tight">
-                    Completed Projects
-                  </p>
-                </div>
-              </motion.div>
+                </motion.div>
 
-              {/* Bottom Card: Full width banner card */}
-              <motion.div
-                custom={3}
-                variants={bentoVariants}
-                initial="hidden"
-                animate="visible"
-                whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-                className="col-span-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-5 flex items-center justify-between gap-2 hover:border-white/20 transition-all"
-              >
-                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                    <Sparkles className="w-4 h-4" />
+                {/* Stat 2: Completed Projects */}
+                <motion.div
+                  custom={2}
+                  variants={bentoVariants}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
+                  className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 hover:border-violet-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
+                >
+                  <div className="absolute -top-8 -right-8 w-16 h-16 bg-violet-500/10 rounded-full blur-xl group-hover:bg-violet-500/20 transition-all duration-300" />
+                  <div className="relative z-10 flex items-center gap-2.5 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shrink-0">
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-lg sm:text-2xl font-extrabold text-white tracking-tight leading-none">
+                        20<span className="text-violet-500">+</span>
+                      </p>
+                      <p className="text-[11px] sm:text-xs text-gray-400 font-medium mt-1 leading-tight truncate">
+                        Completed Projects
+                      </p>
+                    </div>
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-xs sm:text-sm font-semibold text-white truncate">
-                      15+ Happy Clients
-                    </p>
-                    <p className="text-[10px] sm:text-xs text-gray-400 truncate">
-                      Enterprise, Government &amp; Startups
-                    </p>
-                  </div>
-                </div>
-                <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-[11px] text-gray-300 shrink-0">
-                  <span>Universitas Indonesia</span>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
