@@ -32,8 +32,11 @@ interface LayoutProps {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" className={`${plusJakarta.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#0a0a0f] text-white overflow-x-hidden selection:bg-blue-500/30 selection:text-white">
+    <html lang="en" suppressHydrationWarning className={`${plusJakarta.variable} h-full antialiased`}>
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-[#0a0a0f] text-white overflow-x-hidden selection:bg-blue-500/30 selection:text-white"
+      >
         {children}
       </body>
     </html>
