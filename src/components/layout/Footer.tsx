@@ -7,13 +7,13 @@ export default async function Footer() {
   return (
     <footer className="relative border-t border-white/[0.06] overflow-hidden">
       {/* Gradient top line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#652b4e]/50 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 sm:px-8 py-8 sm:py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-500/25 shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#652b4e] via-[#482439] to-[#36162a] flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-[#482439]/25 shrink-0">
               AS
             </div>
             <div className="text-left">

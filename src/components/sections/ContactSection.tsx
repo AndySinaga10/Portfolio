@@ -23,21 +23,21 @@ export default function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "andi.sinaga@email.com",
-      color: "#3b82f6",
+      value: "andysinagaa@gmail.com",
+      color: "#652b4e",
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Jakarta, Indonesia",
-      color: "#8b5cf6",
+      color: "#482439",
     },
-    {
-      icon: Clock,
-      label: "Response Time",
-      value: "Within 24 hours",
-      color: "#10b981",
-    },
+    // {
+    //   icon: Clock,
+    //   label: "Response Time",
+    //   value: "Within 24 hours",
+    //   color: "#10b981",
+    // },
   ];
 
   return (
@@ -46,7 +46,7 @@ export default function ContactSection() {
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] h-[200px] sm:h-[300px] rounded-full opacity-[0.05] pointer-events-none blur-3xl"
-        style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }}
+        style={{ background: "radial-gradient(circle, #482439, transparent)" }}
       />
 
       <div className="relative max-w-6xl mx-auto px-6 sm:px-8">
@@ -113,7 +113,7 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={isContentInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.45, delay: 0.25, ease: [0.16, 1, 0.3, 1] as const }}
-              className="p-4 sm:p-5 bg-gradient-to-br from-blue-500/10 to-violet-500/10 border border-white/10 rounded-xl sm:rounded-2xl"
+              className="p-4 sm:p-5 bg-gradient-to-br from-[#652b4e]/20 to-[#482439]/20 border border-white/10 rounded-xl sm:rounded-2xl"
             >
               <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
                 <span className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shrink-0" />
@@ -167,7 +167,7 @@ export default function ContactSection() {
                 </p>
                 <button
                   onClick={() => setSent(false)}
-                  className="mt-2 px-5 py-2.5 bg-gradient-to-r from-blue-500 to-violet-500 text-white text-xs sm:text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 active:scale-95 transition-all"
+                  className="mt-2 px-5 py-2.5 bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] text-white text-xs sm:text-sm font-semibold rounded-xl border border-[#652b4e]/40 hover:border-[#7a345e]/60 hover:shadow-lg hover:shadow-[#482439]/30 active:scale-95 transition-all"
                 >
                   Send Another
                 </button>
@@ -185,7 +185,7 @@ export default function ContactSection() {
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="John Doe"
-                      className="px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all hover:border-white/20"
+                      className="px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#652b4e]/50 focus:border-transparent transition-all hover:border-white/20"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -198,7 +198,7 @@ export default function ContactSection() {
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="john@example.com"
-                      className="px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all hover:border-white/20"
+                      className="px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#652b4e]/50 focus:border-transparent transition-all hover:border-white/20"
                     />
                   </div>
                 </div>
@@ -212,12 +212,12 @@ export default function ContactSection() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Tell me about your project, timeline, and budget..."
-                    className="px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all resize-none hover:border-white/20"
+                    className="px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#652b4e]/50 focus:border-transparent transition-all resize-none hover:border-white/20"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold text-sm sm:text-base rounded-xl hover:shadow-lg hover:shadow-blue-500/25 active:scale-[0.99] transition-all duration-200 cursor-pointer"
+                  className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] text-white font-semibold text-sm sm:text-base rounded-xl border border-[#652b4e]/40 hover:border-[#7a345e]/60 hover:shadow-lg hover:shadow-[#482439]/30 active:scale-[0.99] transition-all duration-200 cursor-pointer"
                 >
                   <span>Send Message</span>
                   <Send className="w-4 h-4" />

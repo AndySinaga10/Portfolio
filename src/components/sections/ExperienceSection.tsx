@@ -49,12 +49,12 @@ export default function ExperienceSection() {
       <div
         aria-hidden="true"
         className="absolute top-1/3 left-0 sm:left-10 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full opacity-[0.03] pointer-events-none blur-3xl"
-        style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }}
+        style={{ background: "radial-gradient(circle, #652b4e, transparent)" }}
       />
       <div
         aria-hidden="true"
         className="absolute bottom-10 right-0 sm:right-10 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full opacity-[0.03] pointer-events-none blur-3xl"
-        style={{ background: "radial-gradient(circle, #8b5cf6, transparent)" }}
+        style={{ background: "radial-gradient(circle, #482439, transparent)" }}
       />
 
       <div className="relative max-w-5xl mx-auto px-6 sm:px-8">
@@ -65,7 +65,7 @@ export default function ExperienceSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-10 sm:mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 bg-blue-500/10 text-blue-400 text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-blue-500/20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 bg-[#482439]/20 text-[#a05070] text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-[#652b4e]/30">
             <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>Career Trajectory</span>
           </div>
@@ -82,7 +82,7 @@ export default function ExperienceSection() {
             <button
               onClick={() => setActiveFilter("all")}
               className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-xl border transition-all duration-200 cursor-pointer ${activeFilter === "all"
-                ? "bg-white/10 text-white border-blue-500/50 shadow-lg shadow-blue-500/10"
+                ? "bg-white/10 text-white border-[#652b4e]/50 shadow-lg shadow-[#482439]/10"
                 : "bg-white/[0.02] text-gray-400 border-white/[0.08] hover:text-white hover:border-white/20"
                 }`}
             >
@@ -91,7 +91,7 @@ export default function ExperienceSection() {
             <button
               onClick={() => setActiveFilter("design")}
               className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-xl border transition-all duration-200 cursor-pointer ${activeFilter === "design"
-                ? "bg-blue-500/20 text-blue-300 border-blue-500/50 shadow-lg shadow-blue-500/10"
+                ? "bg-[#482439]/30 text-[#a05070] border-[#652b4e]/50 shadow-lg shadow-[#482439]/10"
                 : "bg-white/[0.02] text-gray-400 border-white/[0.08] hover:text-white hover:border-white/20"
                 }`}
             >
@@ -101,7 +101,7 @@ export default function ExperienceSection() {
             <button
               onClick={() => setActiveFilter("leadership")}
               className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-xl border transition-all duration-200 cursor-pointer ${activeFilter === "leadership"
-                ? "bg-violet-500/20 text-violet-300 border-violet-500/50 shadow-lg shadow-violet-500/10"
+                ? "bg-[#36162a]/50 text-[#c06a8e] border-[#652b4e]/50 shadow-lg shadow-[#482439]/10"
                 : "bg-white/[0.02] text-gray-400 border-white/[0.08] hover:text-white hover:border-white/20"
                 }`}
             >
@@ -126,7 +126,7 @@ export default function ExperienceSection() {
           {/* Vertical Timeline Guide Line */}
           <div
             aria-hidden="true"
-            className="absolute left-3.5 sm:left-6 md:left-8 top-3 bottom-8 w-px bg-gradient-to-b from-blue-500/60 via-violet-500/30 to-white/5"
+            className="absolute left-3.5 sm:left-6 md:left-8 top-3 bottom-8 w-px bg-gradient-to-b from-[#652b4e]/60 via-[#482439]/40 to-white/5"
           />
 
           {/* Experience List */}
@@ -150,11 +150,11 @@ export default function ExperienceSection() {
                   <div className="absolute left-3.5 sm:left-6 md:left-8 -translate-x-1/2 top-5 sm:top-6 z-10">
                     {exp.isCurrent ? (
                       <div className="relative flex items-center justify-center">
-                        <span className="absolute w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-blue-500/40 animate-ping" />
-                        <span className="relative w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400 border-2 border-[#0a0a0f] shadow-lg shadow-blue-500/50" />
+                        <span className="absolute w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#652b4e]/40 animate-ping" />
+                        <span className="relative w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-gradient-to-tr from-[#652b4e] to-[#a05070] border-2 border-[#0a0a0f] shadow-lg shadow-[#482439]/50" />
                       </div>
                     ) : (
-                      <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#111118] border-2 border-gray-600 group-hover:border-blue-400 group-hover:scale-125 transition-all duration-300" />
+                      <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#111118] border-2 border-gray-600 group-hover:border-[#652b4e] group-hover:scale-125 transition-all duration-300" />
                     )}
                   </div>
 
@@ -164,7 +164,7 @@ export default function ExperienceSection() {
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-3 mb-3.5 sm:mb-4">
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
-                          <h3 className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-blue-300 transition-colors leading-snug">
+                          <h3 className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-[#a05070] transition-colors leading-snug">
                             {exp.role}
                           </h3>
                           {exp.isCurrent && (
@@ -181,11 +181,11 @@ export default function ExperienceSection() {
                         {/* Company & Note */}
                         <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs sm:text-sm text-gray-300 font-medium">
                           <span className="flex items-center gap-1.5 text-white">
-                            <Building2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                            <Building2 className="w-3.5 h-3.5 text-[#a05070] shrink-0" />
                             {exp.company}
                           </span>
                           {exp.companyNote && (
-                            <span className="text-[11px] sm:text-xs text-blue-400/90 font-normal">
+                            <span className="text-[11px] sm:text-xs text-[#a05070]/90 font-normal">
                               • {exp.companyNote}
                             </span>
                           )}
@@ -195,7 +195,7 @@ export default function ExperienceSection() {
                       {/* Period & Location Badge */}
                       <div className="flex flex-wrap sm:flex-col items-start sm:items-end gap-1 sm:gap-1.5 shrink-0 text-xs mt-1 sm:mt-0">
                         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300 font-medium text-[11px] sm:text-xs">
-                          <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-400 shrink-0" />
+                          <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#a05070] shrink-0" />
                           {exp.period}
                         </span>
                         {exp.location && (
@@ -214,7 +214,7 @@ export default function ExperienceSection() {
                           key={bIdx}
                           className="flex items-start gap-2 text-xs sm:text-sm text-gray-300 leading-relaxed"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400/70 mt-1.5 sm:mt-2 shrink-0 group-hover:bg-blue-400" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#a05070]/70 mt-1.5 sm:mt-2 shrink-0 group-hover:bg-[#a05070]" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -246,12 +246,12 @@ export default function ExperienceSection() {
               >
                 {isExpanded ? (
                   <>
-                    <ChevronUp className="w-4 h-4 text-blue-400" />
+                    <ChevronUp className="w-4 h-4 text-[#a05070]" />
                     <span>Collapse Earlier History</span>
                   </>
                 ) : (
                   <>
-                    <ChevronDown className="w-4 h-4 text-blue-400" />
+                    <ChevronDown className="w-4 h-4 text-[#a05070]" />
                     <span>
                       View Earlier Milestones ({filteredExperiences.length - INITIAL_VISIBLE_COUNT}{" "}
                       more from 2012–2021)

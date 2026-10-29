@@ -44,12 +44,12 @@ export default function HeroSection() {
       <div
         aria-hidden="true"
         className="absolute -top-32 -right-32 sm:-top-40 sm:-right-40 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full opacity-20 pointer-events-none blur-3xl"
-        style={{ background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, #652b4e 0%, transparent 70%)" }}
       />
       <div
         aria-hidden="true"
         className="absolute -bottom-32 -left-32 sm:-bottom-40 sm:-left-40 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] rounded-full opacity-15 pointer-events-none blur-3xl"
-        style={{ background: "radial-gradient(circle, #8b5cf6 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, #482439 0%, transparent 70%)" }}
       />
 
       {/* Grid dot pattern */}
@@ -117,7 +117,7 @@ export default function HeroSection() {
             >
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold text-sm sm:text-base rounded-2xl hover:shadow-lg hover:shadow-blue-500/25 active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] text-white font-semibold text-sm sm:text-base rounded-2xl border border-[#652b4e]/40 hover:border-[#7a345e]/60 hover:shadow-lg hover:shadow-[#482439]/40 active:scale-[0.98] transition-all duration-200"
               >
                 <span>Explore Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -148,7 +148,7 @@ export default function HeroSection() {
                 className="relative w-full aspect-[4/4.8] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent hover:border-white/25 transition-all duration-300 group shadow-2xl shadow-black/40"
               >
                 {/* Subtle back ambient glow */}
-                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 h-48 sm:h-64 bg-gradient-to-tr from-blue-500/20 to-violet-500/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 h-48 sm:h-64 bg-gradient-to-tr from-[#652b4e]/20 to-[#482439]/20 rounded-full blur-3xl pointer-events-none" />
 
                 <Image
                   src="/Andi.png"
@@ -190,16 +190,16 @@ export default function HeroSection() {
                   initial="hidden"
                   animate="visible"
                   whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                  className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 hover:border-blue-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
+                  className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 hover:border-[#652b4e]/40 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
                 >
-                  <div className="absolute -top-8 -right-8 w-16 h-16 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-300" />
+                  <div className="absolute -top-8 -right-8 w-16 h-16 bg-[#482439]/10 rounded-full blur-xl group-hover:bg-[#482439]/20 transition-all duration-300" />
                   <div className="relative z-10 flex items-center gap-2.5 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#482439]/20 border border-[#652b4e]/30 flex items-center justify-center text-[#a05070] shrink-0">
                       <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-lg sm:text-2xl font-extrabold text-white tracking-tight leading-none">
-                        9<span className="text-blue-500">+</span>
+                        9<span className="text-[#a05070]">+</span>
                       </p>
                       <p className="text-[11px] sm:text-xs text-gray-400 font-medium mt-1 leading-tight truncate">
                         Years Experience
@@ -215,16 +215,16 @@ export default function HeroSection() {
                   initial="hidden"
                   animate="visible"
                   whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                  className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 hover:border-violet-500/30 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
+                  className="group relative bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 hover:border-[#482439]/40 hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
                 >
-                  <div className="absolute -top-8 -right-8 w-16 h-16 bg-violet-500/10 rounded-full blur-xl group-hover:bg-violet-500/20 transition-all duration-300" />
+                  <div className="absolute -top-8 -right-8 w-16 h-16 bg-[#36162a]/20 rounded-full blur-xl group-hover:bg-[#482439]/20 transition-all duration-300" />
                   <div className="relative z-10 flex items-center gap-2.5 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shrink-0">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#36162a]/30 border border-[#482439]/30 flex items-center justify-center text-[#a05070] shrink-0">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-lg sm:text-2xl font-extrabold text-white tracking-tight leading-none">
-                        20<span className="text-violet-500">+</span>
+                        20<span className="text-[#a05070]">+</span>
                       </p>
                       <p className="text-[11px] sm:text-xs text-gray-400 font-medium mt-1 leading-tight truncate">
                         Completed Projects

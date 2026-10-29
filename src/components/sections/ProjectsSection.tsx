@@ -13,7 +13,7 @@ const projects = [
     description:
       "This is my Project Highlight for Pashouses including Public Website desktop and internal mobile app like canvassing tracker, pencarian titik tertentu, etc. I'm also doing usability testing in Pashouses for some feature, and the report is showed in the portfolio detail.",
     tags: ["Web App", "Mobile App", "Usability Testing"],
-    accent: "#3b82f6",
+    accent: "#652b4e",
     figmaUrl:
       "https://www.figma.com/proto/pcmGZ7erTE2zQ5uDVuIGLd/Andi-Y-Sinaga-Portfolio?node-id=763-37601&t=HiNVFLpoYApCKg1G-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=51%3A30&show-proto-sidebar=1",
   },
@@ -37,7 +37,7 @@ const projects = [
     description:
       "Nadi have big product team and I responsible to manage feature called My Pharma. My Pharma is medical e-commerce to provide online transaction for user. user can directly buy non-RX required medicine or can upload prescription for RX Required product.",
     tags: ["E-Commerce", "Pharma", "Product Design"],
-    accent: "#8b5cf6",
+    accent: "#482439",
     figmaUrl:
       "https://www.figma.com/proto/pcmGZ7erTE2zQ5uDVuIGLd/Andi-Y-Sinaga-Portfolio?node-id=752-6276&t=HiNVFLpoYApCKg1G-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=51%3A30&show-proto-sidebar=1",
   },
@@ -184,7 +184,7 @@ export default function ProjectsSection() {
       <div
         aria-hidden="true"
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] sm:w-[800px] h-[200px] sm:h-[400px] rounded-full opacity-[0.05] pointer-events-none blur-3xl"
-        style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }}
+        style={{ background: "radial-gradient(circle, #652b4e, transparent)" }}
       />
 
       <div className="relative max-w-6xl mx-auto px-6 sm:px-8">
@@ -196,7 +196,7 @@ export default function ProjectsSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
           className="text-center mb-10 sm:mb-16"
         >
-          <span className="inline-block px-3.5 py-1 sm:px-4 sm:py-1.5 bg-white/5 text-blue-400 text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-white/10">
+          <span className="inline-block px-3.5 py-1 sm:px-4 sm:py-1.5 bg-white/5 text-[#a05070] text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-white/10">
             Portfolio
           </span>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 tracking-tight">
