@@ -46,9 +46,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="#about"
-          className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl"
+          className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#652b4e] rounded-xl"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-shadow duration-300 shrink-0">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#652b4e] via-[#482439] to-[#36162a] flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-[#482439]/25 group-hover:shadow-[#482439]/40 transition-shadow duration-300 shrink-0">
             AS
           </div>
           <span className="font-bold text-white text-base sm:text-lg tracking-tight">
@@ -65,7 +65,7 @@ export default function Navbar() {
               className="relative px-3.5 py-2 text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium group rounded-lg"
             >
               {link.label}
-              <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 group-hover:w-3/4 transition-all duration-300 rounded-full" />
+              <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] group-hover:w-3/4 transition-all duration-300 rounded-full" />
             </a>
           ))}
         </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#contact"
-            className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-500 to-violet-500 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 transition-all duration-200"
+            className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] rounded-xl hover:shadow-lg hover:shadow-[#482439]/25 hover:-translate-y-0.5 transition-all duration-200"
           >
             Let&rsquo;s Talk
           </a>
@@ -83,7 +83,7 @@ export default function Navbar() {
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden w-11 h-11 flex items-center justify-center rounded-xl hover:bg-white/10 active:bg-white/15 transition-colors text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          className="md:hidden w-11 h-11 flex items-center justify-center rounded-xl hover:bg-white/10 active:bg-white/15 transition-colors text-white focus:outline-none focus:ring-2 focus:ring-[#652b4e]/50"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
@@ -125,7 +125,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center w-full py-3.5 text-base font-semibold text-white bg-gradient-to-r from-blue-500 to-violet-500 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 active:opacity-90 transition-all"
+                  className="flex items-center justify-center w-full py-3.5 text-base font-semibold text-white bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] rounded-xl hover:shadow-lg hover:shadow-[#482439]/25 active:opacity-90 transition-all"
                 >
                   Let&rsquo;s Talk
                 </a>

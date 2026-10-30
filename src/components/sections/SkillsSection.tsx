@@ -20,13 +20,13 @@ const skills = [
     title: "User Research",
     description: "Conducting interviews, surveys, and usability studies to understand user needs and behaviors.",
     icon: Search,
-    color: "#3b82f6",
+    color: "#652b4e",
   },
   {
     title: "Wireframing",
     description: "Creating low to high-fidelity wireframes that map user flows and information architecture.",
     icon: PenTool,
-    color: "#8b5cf6",
+    color: "#482439",
   },
   {
     title: "Prototyping",
@@ -60,14 +60,14 @@ const processSteps = [
     title: "Discover",
     description: "User research, stakeholder interviews, competitive analysis, and market research.",
     icon: Lightbulb,
-    color: "#3b82f6",
+    color: "#652b4e",
   },
   {
     step: "02",
     title: "Define",
     description: "Synthesizing research into personas, journey maps, and design principles.",
     icon: Compass,
-    color: "#8b5cf6",
+    color: "#482439",
   },
   {
     step: "03",
@@ -99,7 +99,7 @@ export default function SkillsSection() {
       <div
         aria-hidden="true"
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] rounded-full opacity-[0.04] pointer-events-none blur-3xl"
-        style={{ background: "radial-gradient(circle, #8b5cf6, transparent)" }}
+        style={{ background: "radial-gradient(circle, #482439, transparent)" }}
       />
 
       <div className="relative max-w-6xl mx-auto px-6 sm:px-8">
@@ -111,7 +111,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
           className="text-center mb-10 sm:mb-16"
         >
-          <span className="inline-block px-3.5 py-1 sm:px-4 sm:py-1.5 bg-white/5 text-violet-400 text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-white/10">
+          <span className="inline-block px-3.5 py-1 sm:px-4 sm:py-1.5 bg-white/5 text-[#a05070] text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-white/10">
             Expertise
           </span>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 tracking-tight">

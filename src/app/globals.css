@@ -6,8 +6,8 @@
   --color-foreground: #ffffff;
   --color-card: #111118;
   --color-card-hover: #16161d;
-  --color-accent: #3b82f6;
-  --color-accent-secondary: #8b5cf6;
+  --color-accent: #652b4e;
+  --color-accent-secondary: #482439;
   --color-muted: #6b7280;
   --font-sans: var(--font-plus-jakarta);
 }
@@ -53,7 +53,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #a05070 0%, #652b4e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -61,7 +61,7 @@ body {
 
 /* Glow effect */
 .glow {
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15), 0 0 80px rgba(139, 92, 246, 0.1);
+  box-shadow: 0 0 40px rgba(72, 36, 57, 0.3), 0 0 80px rgba(54, 22, 42, 0.2);
 }
 
 /* Glass effect */

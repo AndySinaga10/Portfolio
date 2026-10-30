@@ -26,7 +26,7 @@ export default function EducationSection() {
       <div
         aria-hidden="true"
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] rounded-full opacity-[0.03] pointer-events-none blur-3xl"
-        style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }}
+        style={{ background: "radial-gradient(circle, #482439, transparent)" }}
       />
 
       <div className="relative max-w-6xl mx-auto px-6 sm:px-8">
@@ -37,7 +37,7 @@ export default function EducationSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-10 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 bg-violet-500/10 text-violet-400 text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-violet-500/20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 bg-[#482439]/20 text-[#a05070] text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4 border border-[#652b4e]/30">
             <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>Academic Background</span>
           </div>
@@ -91,7 +91,7 @@ export default function EducationSection() {
                 </div>
 
                 {/* Institution & Degree */}
-                <h3 className="text-base sm:text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors leading-snug">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-1 group-hover:text-[#a05070] transition-colors leading-snug">
                   {edu.institution}
                 </h3>
                 <p className="text-xs sm:text-sm font-semibold text-gray-300 mb-2.5 sm:mb-3">
@@ -101,7 +101,7 @@ export default function EducationSection() {
                 {/* Period & Location */}
                 <div className="space-y-1 sm:space-y-1.5 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-white/[0.06] text-[11px] sm:text-xs text-gray-400">
                   <div className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                    <Calendar className="w-3.5 h-3.5 text-[#a05070] shrink-0" />
                     <span>{edu.period}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
@@ -119,7 +119,7 @@ export default function EducationSection() {
               {/* Highlights / Core Focus */}
               <div>
                 <h4 className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2.5 sm:mb-3 flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-violet-400" />
+                  <Award className="w-3.5 h-3.5 text-[#a05070]" />
                   Key Coursework &amp; Focus
                 </h4>
                 <ul className="space-y-1.5 sm:space-y-2">
@@ -128,7 +128,7 @@ export default function EducationSection() {
                       key={hIdx}
                       className="flex items-start gap-2 text-xs text-gray-300 leading-snug"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-400/80 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#a05070]/80 mt-0.5 shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
