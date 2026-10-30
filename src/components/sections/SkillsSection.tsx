@@ -26,7 +26,7 @@ const skills = [
     title: "Wireframing",
     description: "Creating low to high-fidelity wireframes that map user flows and information architecture.",
     icon: PenTool,
-    color: "#482439",
+    color: "#8b5cf6",
   },
   {
     title: "Prototyping",
@@ -67,7 +67,7 @@ const processSteps = [
     title: "Define",
     description: "Synthesizing research into personas, journey maps, and design principles.",
     icon: Compass,
-    color: "#482439",
+    color: "#8b5cf6",
   },
   {
     step: "03",

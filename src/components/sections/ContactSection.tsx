@@ -73,7 +73,7 @@ export default function ContactSection() {
       label: "Location",
       value: "Jakarta, Indonesia",
       href: undefined,
-      color: "#482439",
+      color: "#652b4e",
     },
   ];
 
