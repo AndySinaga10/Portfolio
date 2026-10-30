@@ -43,7 +43,7 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={sectionRef}
-      className="py-16 sm:py-24 lg:py-32 relative overflow-hidden"
+      className="py-16 sm:py-24 lg:py-32 relative overflow-x-clip"
     >
       {/* Background ambient glow */}
       <div
