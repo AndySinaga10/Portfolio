@@ -94,7 +94,7 @@ export default function SkillsSection() {
   const isProcessInView = useInView(processRef, { once: true, margin: "-60px" });
 
   return (
-    <section id="skills" className="py-16 sm:py-24 lg:py-32 relative overflow-hidden">
+    <section id="skills" className="py-16 sm:py-24 lg:py-32 relative overflow-x-clip">
       {/* Background accent */}
       <div
         aria-hidden="true"

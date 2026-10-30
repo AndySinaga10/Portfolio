@@ -179,7 +179,14 @@ export default function ProjectsSection() {
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-80px" });
 
   return (
-    <section id="projects" className="py-16 sm:py-24 lg:py-32 relative overflow-hidden">
+    <section id="projects" className="py-16 sm:py-24 lg:py-32 relative overflow-x-clip">
+      {/* Continuing ambient glow from hero on the left */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-36 sm:-top-48 -left-32 sm:-left-44 w-[320px] sm:w-[580px] h-[360px] sm:h-[650px] rounded-full opacity-20 pointer-events-none blur-3xl"
+        style={{ background: "radial-gradient(ellipse at center, #482439 0%, transparent 70%)" }}
+      />
+
       {/* Background gradient */}
       <div
         aria-hidden="true"
@@ -187,7 +194,7 @@ export default function ProjectsSection() {
         style={{ background: "radial-gradient(circle, #652b4e, transparent)" }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
         {/* Section header */}
         <motion.header
           ref={headerRef}

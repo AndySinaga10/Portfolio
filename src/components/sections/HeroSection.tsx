@@ -38,7 +38,7 @@ export default function HeroSection() {
   return (
     <section
       id="about"
-      className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20"
+      className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-x-clip pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20"
     >
       {/* Background gradient orbs */}
       <div
@@ -48,7 +48,7 @@ export default function HeroSection() {
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-32 -left-32 sm:-bottom-40 sm:-left-40 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] rounded-full opacity-15 pointer-events-none blur-3xl"
+        className="absolute -bottom-44 -left-32 sm:-bottom-56 sm:-left-44 w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] rounded-full opacity-25 pointer-events-none blur-3xl"
         style={{ background: "radial-gradient(circle, #482439 0%, transparent 70%)" }}
       />
 
@@ -62,7 +62,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Content Column */}
           <motion.div
