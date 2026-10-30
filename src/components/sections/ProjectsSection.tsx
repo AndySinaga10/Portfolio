@@ -37,7 +37,7 @@ const projects = [
     description:
       "Nadi have big product team and I responsible to manage feature called My Pharma. My Pharma is medical e-commerce to provide online transaction for user. user can directly buy non-RX required medicine or can upload prescription for RX Required product.",
     tags: ["E-Commerce", "Pharma", "Product Design"],
-    accent: "#482439",
+    accent: "#6366f1",
     figmaUrl:
       "https://www.figma.com/proto/pcmGZ7erTE2zQ5uDVuIGLd/Andi-Y-Sinaga-Portfolio?node-id=752-6276&t=HiNVFLpoYApCKg1G-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=51%3A30&show-proto-sidebar=1",
   },
