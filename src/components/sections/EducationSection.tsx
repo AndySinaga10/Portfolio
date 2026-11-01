@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
   Calendar,
@@ -9,8 +9,135 @@ import {
   Award,
   BookOpen,
   CheckCircle2,
+  ChevronDown,
 } from "lucide-react";
 import { educations } from "@/data/education";
+
+function EducationCard({
+  edu,
+  idx,
+  isInView,
+}: {
+  edu: (typeof educations)[0];
+  idx: number;
+  isInView: boolean;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.5,
+        delay: idx * 0.1,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      whileHover={{ y: -4, transition: { duration: 0.2 } }}
+      className="relative flex flex-col justify-between bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:border-white/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 hover:bg-white/[0.05] transition-all duration-300 group"
+    >
+      {/* Top glow line */}
+      <div
+        className="absolute top-0 left-6 right-6 h-px opacity-50 group-hover:opacity-100 transition-opacity"
+        style={{
+          background: `linear-gradient(90deg, transparent, ${edu.accentColor}, transparent)`,
+        }}
+      />
+
+      <div>
+        {/* Top Row: Institution Icon & Degree Level Badge */}
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <div
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/10 shadow-lg"
+            style={{ backgroundColor: `${edu.accentColor}15` }}
+          >
+            <BookOpen
+              className="w-5 h-5 sm:w-6 sm:h-6"
+              style={{ color: edu.accentColor }}
+            />
+          </div>
+          <span className="px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-semibold rounded-full bg-white/5 border border-white/10 text-gray-300">
+            {edu.level}
+          </span>
+        </div>
+
+        {/* Institution & Degree */}
+        <h3 className="text-base sm:text-lg font-bold text-white mb-1 group-hover:text-[#a05070] transition-colors leading-snug">
+          {edu.institution}
+        </h3>
+        <p className="text-xs sm:text-sm font-semibold text-gray-300 mb-2.5 sm:mb-3">
+          {edu.field}
+        </p>
+
+        {/* Period & Location */}
+        <div className="space-y-1 sm:space-y-1.5 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-white/[0.06] text-[11px] sm:text-xs text-gray-400">
+          <div className="flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5 text-[#a05070] shrink-0" />
+            <span>{edu.period}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <MapPin className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+            <span>{edu.location}</span>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-xs text-gray-300 leading-relaxed mb-4 sm:mb-5">
+          {edu.description}
+        </p>
+      </div>
+
+      {/* Highlights / Core Focus - Expandable Accordion */}
+      <div className="mt-auto pt-3 border-t border-white/[0.06]">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          className="w-full flex items-center justify-between py-1.5 px-2 -mx-2 text-left rounded-lg text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all cursor-pointer group/btn"
+        >
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+            <Award className="w-3.5 h-3.5 text-[#a05070]" />
+            Key Coursework &amp; Focus
+          </span>
+          <div className="flex items-center gap-1.5">
+            <span className="text-[10px] text-gray-500 font-medium">
+              {edu.highlights.length}
+            </span>
+            <ChevronDown
+              className={`w-3.5 h-3.5 text-gray-400 group-hover/btn:text-white transition-transform duration-300 ${
+                isOpen ? "rotate-180" : ""
+              }`}
+            />
+          </div>
+        </button>
+
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden"
+            >
+              <ul className="space-y-1.5 sm:space-y-2 pt-3 pb-1">
+                {edu.highlights.map((item, hIdx) => (
+                  <li
+                    key={hIdx}
+                    className="flex items-start gap-2 text-xs text-gray-300 leading-snug"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#a05070]/80 mt-0.5 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function EducationSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -53,88 +180,12 @@ export default function EducationSection() {
         {/* Education Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {educations.map((edu, idx) => (
-            <motion.div
+            <EducationCard
               key={edu.id}
-              initial={{ opacity: 0, y: 24 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: idx * 0.1,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="relative flex flex-col justify-between bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:border-white/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 hover:bg-white/[0.05] transition-all duration-300 group"
-            >
-              {/* Top glow line */}
-              <div
-                className="absolute top-0 left-6 right-6 h-px opacity-50 group-hover:opacity-100 transition-opacity"
-                style={{
-                  background: `linear-gradient(90deg, transparent, ${edu.accentColor}, transparent)`,
-                }}
-              />
-
-              <div>
-                {/* Top Row: Institution Icon & Degree Level Badge */}
-                <div className="flex items-center justify-between mb-4 sm:mb-6">
-                  <div
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/10 shadow-lg"
-                    style={{ backgroundColor: `${edu.accentColor}15` }}
-                  >
-                    <BookOpen
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                      style={{ color: edu.accentColor }}
-                    />
-                  </div>
-                  <span className="px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-semibold rounded-full bg-white/5 border border-white/10 text-gray-300">
-                    {edu.level}
-                  </span>
-                </div>
-
-                {/* Institution & Degree */}
-                <h3 className="text-base sm:text-lg font-bold text-white mb-1 group-hover:text-[#a05070] transition-colors leading-snug">
-                  {edu.institution}
-                </h3>
-                <p className="text-xs sm:text-sm font-semibold text-gray-300 mb-2.5 sm:mb-3">
-                  {edu.field}
-                </p>
-
-                {/* Period & Location */}
-                <div className="space-y-1 sm:space-y-1.5 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-white/[0.06] text-[11px] sm:text-xs text-gray-400">
-                  <div className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-[#a05070] shrink-0" />
-                    <span>{edu.period}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-                    <span>{edu.location}</span>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-xs text-gray-300 leading-relaxed mb-5 sm:mb-6">
-                  {edu.description}
-                </p>
-              </div>
-
-              {/* Highlights / Core Focus */}
-              <div>
-                <h4 className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2.5 sm:mb-3 flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-[#a05070]" />
-                  Key Coursework &amp; Focus
-                </h4>
-                <ul className="space-y-1.5 sm:space-y-2">
-                  {edu.highlights.map((item, hIdx) => (
-                    <li
-                      key={hIdx}
-                      className="flex items-start gap-2 text-xs text-gray-300 leading-snug"
-                    >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#a05070]/80 mt-0.5 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
+              edu={edu}
+              idx={idx}
+              isInView={isInView}
+            />
           ))}
         </div>
       </div>
