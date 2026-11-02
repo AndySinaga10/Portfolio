@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -14,8 +15,8 @@ const projects = [
     tags: ["Web App", "Mobile App", "Usability Testing"],
     accent: "#e07a9e",
     thumbnail: "/thumbnail-pashouses.png",
-    figmaUrl:
-      "https://www.figma.com/proto/pcmGZ7erTE2zQ5uDVuIGLd/Andi-Y-Sinaga-Portfolio?node-id=763-37601&t=HiNVFLpoYApCKg1G-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=51%3A30&show-proto-sidebar=1",
+    href: "/projects/pashouses",
+    external: false,
   },
   {
     id: 2,
@@ -25,8 +26,8 @@ const projects = [
     tags: ["Healthcare", "Mobile App", "UX Research"],
     accent: "#0891b2",
     thumbnail: "/thumbnail-nadi-refund.png",
-    figmaUrl:
-      "https://www.figma.com/proto/pcmGZ7erTE2zQ5uDVuIGLd/Andi-Y-Sinaga-Portfolio?node-id=461-69&t=HiNVFLpoYApCKg1G-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=51%3A30&show-proto-sidebar=1",
+    href: "/projects/nadi-refund",
+    external: false,
   },
   {
     id: 3,
@@ -36,8 +37,8 @@ const projects = [
     tags: ["E-Commerce", "Pharma", "Product Design"],
     accent: "#6366f1",
     thumbnail: "/project-nadi.png",
-    figmaUrl:
-      "https://www.figma.com/proto/pcmGZ7erTE2zQ5uDVuIGLd/Andi-Y-Sinaga-Portfolio?node-id=752-6276&t=HiNVFLpoYApCKg1G-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=51%3A30&show-proto-sidebar=1",
+    href: "/projects/nadi-highlight",
+    external: false,
   },
   {
     id: 4,
@@ -47,8 +48,8 @@ const projects = [
     tags: ["Prototype", "Mobile App", "Usability Testing"],
     accent: "#10b981",
     thumbnail: "/mypharma-proto.png",
-    figmaUrl:
-      "https://www.figma.com/proto/t5RYxCI2jBDkibPeoBbqly/MyPharma?page-id=0%3A1&node-id=10668-22517&starting-point-node-id=9270%3A50419&t=WCuLU1hc0AVaewNI-1&fuid=1519166877991708250",
+    href: "https://www.figma.com/proto/t5RYxCI2jBDkibPeoBbqly/MyPharma?page-id=0%3A1&node-id=10668-22517&starting-point-node-id=9270%3A50419&t=WCuLU1hc0AVaewNI-1&fuid=1519166877991708250",
+    external: true,
   },
   {
     id: 5,
@@ -58,8 +59,8 @@ const projects = [
     tags: ["Logistics", "Mobile App", "Enterprise"],
     accent: "#ef4444",
     thumbnail: "/Mobile-NLE.png",
-    figmaUrl:
-      "https://www.figma.com/proto/9K22neTq3AJiY9YZ4sRrTI/Mobile-NLE?page-id=0%3A1&node-id=2-80271&viewport=1647%2C1158%2C0.11&t=ae2U95m6ipWg1HSD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A80271&show-proto-sidebar=1",
+    href: "https://www.figma.com/proto/9K22neTq3AJiY9YZ4sRrTI/Mobile-NLE?page-id=0%3A1&node-id=2-80271&viewport=1647%2C1158%2C0.11&t=ae2U95m6ipWg1HSD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A80271&show-proto-sidebar=1",
+    external: true,
   },
   {
     id: 6,
@@ -69,10 +70,12 @@ const projects = [
     tags: ["Government", "UX Case", "Logistics"],
     accent: "#f97316",
     thumbnail: "/NLE-UX.png",
-    figmaUrl:
-      "https://drive.google.com/file/d/1YhNFQ42cHVETDVe_RYhKYxwqbP0fZNHe/view",
+    href: "https://drive.google.com/file/d/1YhNFQ42cHVETDVe_RYhKYxwqbP0fZNHe/view",
+    external: true,
   },
 ];
+
+const MotionLink = motion(Link);
 
 function ProjectCard({
   project,
@@ -84,12 +87,15 @@ function ProjectCard({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
+  const Card = project.external ? motion.a : MotionLink;
+  const linkProps = project.external
+    ? { href: project.href, target: "_blank", rel: "noopener noreferrer" }
+    : { href: project.href };
+
   return (
-    <motion.a
+    <Card
       ref={ref}
-      href={project.figmaUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...linkProps}
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{
@@ -174,7 +180,7 @@ function ProjectCard({
           ))}
         </div>
       </div>
-    </motion.a>
+    </Card>
   );
 }
 
