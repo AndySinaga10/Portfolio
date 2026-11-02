@@ -4,9 +4,19 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "MyPharma Mobile & Dashboard — Nadi Project Highlight | Andi Sinaga",
+  title: "MyPharma Mobile & Dashboard — Nadi Project Highlight",
   description:
-    "End-to-end medical e-commerce platform for purchasing over-the-counter and prescription medications.",
+    "Project by Andi Yusup Sinaga: end-to-end medical e-commerce platform for purchasing over-the-counter and prescription medications, with an admin dashboard.",
+  alternates: { canonical: "/projects/nadi-highlight" },
+  openGraph: {
+    type: "article",
+    url: "/projects/nadi-highlight",
+    title: "MyPharma Mobile & Dashboard — Nadi Project Highlight | Andi Yusup Sinaga",
+    description:
+      "End-to-end medical e-commerce platform for purchasing over-the-counter and prescription medications.",
+    images: [{ url: "/project-nadi.png", alt: "MyPharma mobile app and dashboard" }],
+  },
+  twitter: { card: "summary_large_image", images: ["/project-nadi.png"] },
 };
 
 const accent = "#6366f1";

@@ -84,6 +84,7 @@ export default function HeroSection() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] sm:leading-[1.1] tracking-tight">
                 Hi, I&rsquo;m{" "}
                 <span className="text-white">Andi</span>
+                <span className="sr-only"> Yusup Sinaga, Senior UI/UX Product Designer</span>
                 <br />
                 <span className="gradient-text">Crafting Digital</span>
                 <br />
@@ -152,7 +153,7 @@ export default function HeroSection() {
 
                 <Image
                   src="/Andi.png"
-                  alt="Andi Sinaga - UI/UX Product Designer"
+                  alt="Andi Yusup Sinaga (Andi Sinaga) - Senior UI/UX Product Designer"
                   fill
                   className="object-cover object-center filter brightness-95 group-hover:brightness-105 group-hover:scale-105 transition-all duration-500"
                   style={{ objectPosition: "center 48%" }}

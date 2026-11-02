@@ -4,9 +4,19 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Nadi Refund System — UX Case Study | Andi Sinaga",
+  title: "Nadi Refund System — UX Case Study",
   description:
-    "Transforming traditional medical service refund workflows into a seamless semi-automated experience.",
+    "UX case study by Andi Yusup Sinaga: transforming traditional medical service refund workflows into a seamless semi-automated experience at Nadi Healthcare.",
+  alternates: { canonical: "/projects/nadi-refund" },
+  openGraph: {
+    type: "article",
+    url: "/projects/nadi-refund",
+    title: "Nadi Refund System UX Case Study | Andi Yusup Sinaga",
+    description:
+      "Transforming traditional medical service refund workflows into a seamless semi-automated experience.",
+    images: [{ url: "/thumbnail-nadi-refund.png", alt: "Nadi refund system UX case study" }],
+  },
+  twitter: { card: "summary_large_image", images: ["/thumbnail-nadi-refund.png"] },
 };
 
 const accent = "#0891b2";

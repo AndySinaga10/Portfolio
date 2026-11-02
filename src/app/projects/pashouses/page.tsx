@@ -4,9 +4,19 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pashouses — Project Highlight | Andi Sinaga",
+  title: "Pashouses Project Highlight — Web, Mobile App & Usability Testing",
   description:
-    "Public website and internal mobile app featuring canvassing tracker and usability testing reports.",
+    "Case study by Andi Yusup Sinaga: Pashouses public website and internal mobile app featuring canvassing tracker and usability testing reports.",
+  alternates: { canonical: "/projects/pashouses" },
+  openGraph: {
+    type: "article",
+    url: "/projects/pashouses",
+    title: "Pashouses Project Highlight | Andi Yusup Sinaga",
+    description:
+      "Public website and internal mobile app featuring canvassing tracker and usability testing reports.",
+    images: [{ url: "/thumbnail-pashouses.png", alt: "Pashouses project highlight" }],
+  },
+  twitter: { card: "summary_large_image", images: ["/thumbnail-pashouses.png"] },
 };
 
 const highlights = [
