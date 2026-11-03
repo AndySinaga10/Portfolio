@@ -2,15 +2,18 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://andisinaga.web.id"
 ).replace(/\/$/, "");
 
+export const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/andi-sinaga/" },
+  { label: "GitHub", href: "https://github.com/AndySinaga10" },
+  { label: "Instagram", href: "https://www.instagram.com/andysinagaa/" },
+];
+
 export const person = {
   name: "Andi Yusup Sinaga",
   shortName: "Andi Sinaga",
   jobTitle: "Senior UI/UX Product Designer",
   email: "andysinagaa@gmail.com",
-  sameAs: [
-    "https://github.com/AndySinaga10",
-    "https://www.linkedin.com/in/andi-sinaga-a0ba65114/",
-  ],
+  sameAs: socialLinks.map((link) => link.href),
 };
 
 export const siteTitle = `${person.name} (Andi Sinaga) — Senior UI/UX Product Designer`;

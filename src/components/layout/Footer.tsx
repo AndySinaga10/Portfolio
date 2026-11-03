@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import { socialLinks } from "@/lib/site";
 
 export default async function Footer() {
   "use cache";
@@ -37,14 +38,12 @@ export default async function Footer() {
 
           {/* Social */}
           <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
-            {[
-              { label: "LinkedIn", href: "#" },
-              { label: "Dribbble", href: "#" },
-              { label: "Behance", href: "#" },
-            ].map((social) => (
+            {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-3 py-1.5 text-xs font-medium text-gray-400 bg-white/5 border border-white/10 rounded-lg hover:text-white hover:border-white/20 active:bg-white/10 transition-all duration-200"
               >
                 {social.label}

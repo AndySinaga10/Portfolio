@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, MapPin, Send, ArrowUpRight, Loader2, AlertCircle } from "lucide-react";
+import { socialLinks } from "@/lib/site";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -190,14 +191,12 @@ export default function ContactSection() {
               transition={{ duration: 0.45, delay: 0.35, ease: [0.16, 1, 0.3, 1] as const }}
               className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1"
             >
-              {[
-                { label: "LinkedIn", href: "#" },
-                { label: "GitHub", href: "#" },
-                { label: "Dribbble", href: "#" },
-              ].map((social) => (
+              {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-gray-400 bg-white/5 border border-white/10 rounded-xl hover:text-white hover:border-white/20 active:bg-white/10 transition-all"
                 >
                   <span>{social.label}</span>
