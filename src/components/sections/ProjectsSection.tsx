@@ -1,6 +1,7 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import FigmaPrototypeLink from "@/components/product/FigmaPrototypeLink";
 
 const caseStudies = [
   {
@@ -34,7 +35,7 @@ const moreWork = [
     company: "Nadi Healthcare",
     title: "MyPharma Prototype",
     teaser: "Interactive high-fidelity prototyping and usability testing to validate user flows and stress points.",
-    opens: "Figma prototype",
+    isFigmaPrototype: true,
     thumbnail: "/mypharma-proto.png",
     href: "https://www.figma.com/proto/t5RYxCI2jBDkibPeoBbqly/MyPharma?page-id=0%3A1&node-id=10668-22517&starting-point-node-id=9270%3A50419&t=WCuLU1hc0AVaewNI-1&fuid=1519166877991708250",
   },
@@ -42,7 +43,7 @@ const moreWork = [
     company: "National Logistic Ecosystem",
     title: "Mobile NLE Prototype",
     teaser: "Nationwide logistics ecosystem app covering booking transactions and cargo documentation.",
-    opens: "Figma prototype",
+    isFigmaPrototype: true,
     thumbnail: "/Mobile-NLE.png",
     href: "https://www.figma.com/proto/9K22neTq3AJiY9YZ4sRrTI/Mobile-NLE?page-id=0%3A1&node-id=2-80271&viewport=1647%2C1158%2C0.11&t=ae2U95m6ipWg1HSD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A80271&show-proto-sidebar=1",
   },
@@ -50,7 +51,7 @@ const moreWork = [
     company: "National Logistic Ecosystem",
     title: "NLE Multi Destination UX Case",
     teaser: "Solving complex multi-destination tracking and logistical data workflows in a government ecosystem.",
-    opens: "PDF case study",
+    isFigmaPrototype: false,
     thumbnail: "/NLE-UX.png",
     href: "https://drive.google.com/file/d/1YhNFQ42cHVETDVe_RYhKYxwqbP0fZNHe/view",
   },
@@ -121,35 +122,62 @@ export default function ProjectsSection() {
           Prototypes &amp; documents
         </h3>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
-          {moreWork.map((project) => (
-            <a
-              key={project.title}
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col"
-            >
-              <div className="relative mb-5 aspect-[846/471] overflow-hidden bg-plum">
-                <Image
-                  src={project.thumbnail}
-                  alt=""
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                />
-              </div>
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest">{project.company}</p>
-              <h4 className="mb-3 text-2xl font-extrabold leading-tight transition-colors group-hover:text-coral-ink">
-                {project.title}
-              </h4>
-              <p className="mb-4 leading-relaxed">{project.teaser}</p>
-              <span className="mt-auto inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-                Open {project.opens}
-                <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
-                <span className="sr-only">(opens in a new tab)</span>
-              </span>
-            </a>
-          ))}
+          {moreWork.map((project) => {
+            const cardClass = "group flex flex-col";
+            const cardBody = (
+              <>
+                <div className="relative mb-5 aspect-[846/471] overflow-hidden bg-plum">
+                  <Image
+                    src={project.thumbnail}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                  />
+                </div>
+                <p className="mb-2 text-xs font-bold uppercase tracking-widest">{project.company}</p>
+                <h4 className="mb-3 text-2xl font-extrabold leading-tight transition-colors group-hover:text-coral-ink">
+                  {project.title}
+                </h4>
+                <p className="mb-4 leading-relaxed">{project.teaser}</p>
+                <span className="mt-auto inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
+                  {project.isFigmaPrototype ? (
+                    <>
+                      Try the prototype
+                      <Play aria-hidden="true" className="h-4 w-4" />
+                    </>
+                  ) : (
+                    <>
+                      Open PDF case study
+                      <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </>
+                  )}
+                </span>
+              </>
+            );
+
+            return project.isFigmaPrototype ? (
+              <FigmaPrototypeLink
+                key={project.title}
+                href={project.href}
+                title={project.title}
+                className={cardClass}
+              >
+                {cardBody}
+              </FigmaPrototypeLink>
+            ) : (
+              <a
+                key={project.title}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cardClass}
+              >
+                {cardBody}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
