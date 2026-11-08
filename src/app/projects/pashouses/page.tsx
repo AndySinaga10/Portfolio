@@ -39,28 +39,28 @@ const highlights = [
 
 export default function PashousesProjectPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f] text-white">
+    <main className="min-h-screen bg-plum text-cream">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 py-12 sm:py-20">
         <Link
           href="/#projects"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-8 sm:mb-12"
+          className="inline-flex items-center gap-2 text-sm text-cream/85 hover:text-coral transition-colors mb-8 sm:mb-12"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to projects
         </Link>
 
         <div className="flex items-center gap-2 mb-4">
-          <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#e07a9e" }} />
-          <span className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider">
+          <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#ff6f61" }} />
+          <span className="text-xs sm:text-sm font-semibold text-cream/85 uppercase tracking-wider">
             Pashouses
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4">
+        <h1 className="font-display text-5xl sm:text-7xl font-black uppercase leading-[0.95] tracking-tight mb-4">
           Projects Highlight at Pashouses
         </h1>
 
-        <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mb-10">
+        <p className="text-cream/85 text-sm sm:text-base leading-relaxed max-w-2xl mb-10">
           Public website and internal mobile app featuring canvassing tracker
           and usability testing reports.
         </p>
@@ -69,11 +69,11 @@ export default function PashousesProjectPage() {
           {["Web App", "Mobile App", "Usability Testing"].map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-xs font-medium rounded-full border"
+              className="px-3 py-1 text-xs font-bold uppercase tracking-wider border"
               style={{
-                color: "#e07a9e",
-                backgroundColor: "#e07a9e18",
-                borderColor: "#e07a9e35",
+                color: "#ff6f61",
+                backgroundColor: "#ff6f6118",
+                borderColor: "#ff6f6155",
               }}
             >
               {tag}
@@ -81,7 +81,7 @@ export default function PashousesProjectPage() {
           ))}
         </div>
 
-        <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 border border-white/[0.08] mb-12">
+        <div className="relative w-full overflow-hidden bg-plum-deep mb-12">
           <Image
             src="/thumbnail-pashouses.png"
             alt="Pashouses project screens"
@@ -96,12 +96,12 @@ export default function PashousesProjectPage() {
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 sm:p-6"
+              className="bg-plum-deep p-5 sm:p-6"
             >
-              <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
+              <h3 className="text-base sm:text-lg font-semibold text-cream mb-2">
                 {item.title}
               </h3>
-              <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-cream/85 leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -110,13 +110,13 @@ export default function PashousesProjectPage() {
 
         <div className="mt-16 sm:mt-24">
           <div className="flex items-center gap-2 mb-6 sm:mb-8">
-            <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#e07a9e" }} />
-            <span className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider">
+            <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#ff6f61" }} />
+            <span className="text-xs sm:text-sm font-semibold text-cream/85 uppercase tracking-wider">
               Full Project Breakdown
             </span>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 border border-white/[0.08]">
+          <div className="relative w-full overflow-hidden bg-plum-deep">
             <Image
               src="/pashouses-project-breakdown.jpg"
               alt="Pashouses full project breakdown — canvassing tracker, cluster marker, Instagram-integrated posting, WhatsApp chat, leads distribution, and KPR calculator flows"

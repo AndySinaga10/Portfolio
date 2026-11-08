@@ -1,16 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SITE_URL, person, siteDescription, siteTitle } from "@/lib/site";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+const satoshi = localFont({
+  variable: "--font-satoshi",
+  display: "swap",
+  src: [
+    { path: "./fonts/Satoshi-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Satoshi-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Satoshi-700.woff2", weight: "700", style: "normal" },
+  ],
+});
+
+const cabinetGrotesk = localFont({
+  variable: "--font-cabinet",
+  display: "swap",
+  src: [
+    { path: "./fonts/CabinetGrotesk-800.woff2", weight: "800", style: "normal" },
+    { path: "./fonts/CabinetGrotesk-900.woff2", weight: "900", style: "normal" },
+  ],
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0f",
+  themeColor: "#4a1538",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -115,10 +128,10 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${plusJakarta.variable} h-full antialiased`}>
+    <html lang="en" suppressHydrationWarning className={`${satoshi.variable} ${cabinetGrotesk.variable} h-full antialiased`}>
       <body
         suppressHydrationWarning
-        className="min-h-full flex flex-col bg-[#0a0a0f] text-white overflow-x-hidden selection:bg-[#482439]/50 selection:text-white"
+        className="min-h-full flex flex-col bg-cream text-plum overflow-x-hidden selection:bg-coral selection:text-plum"
       >
         <script
           type="application/ld+json"

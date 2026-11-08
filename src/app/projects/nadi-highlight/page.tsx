@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: ["/project-nadi.png"] },
 };
 
-const accent = "#6366f1";
+const accent = "#ff6f61";
 
 const meta = [
   { label: "Product", value: "MyPharma Mobile & Dashboard" },
@@ -73,7 +73,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2 mb-4 sm:mb-5">
       <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: accent }} />
-      <span className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider">
+      <span className="text-xs sm:text-sm font-semibold text-cream/85 uppercase tracking-wider">
         {children}
       </span>
     </div>
@@ -86,10 +86,10 @@ function FlowGrid({ items }: { items: { title: string; description: string }[] }
       {items.map((item) => (
         <div
           key={item.title}
-          className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 sm:p-6"
+          className="bg-plum-deep p-5 sm:p-6"
         >
-          <h3 className="text-base sm:text-lg font-semibold text-white mb-2">{item.title}</h3>
-          <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">{item.description}</p>
+          <h3 className="text-base sm:text-lg font-semibold text-cream mb-2">{item.title}</h3>
+          <p className="text-xs sm:text-sm text-cream/85 leading-relaxed">{item.description}</p>
         </div>
       ))}
     </div>
@@ -98,11 +98,11 @@ function FlowGrid({ items }: { items: { title: string; description: string }[] }
 
 export default function NadiHighlightProjectPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f] text-white">
+    <main className="min-h-screen bg-plum text-cream">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 py-12 sm:py-20">
         <Link
           href="/#projects"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-8 sm:mb-12"
+          className="inline-flex items-center gap-2 text-sm text-cream/85 hover:text-coral transition-colors mb-8 sm:mb-12"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to projects
@@ -110,11 +110,11 @@ export default function NadiHighlightProjectPage() {
 
         <SectionLabel>Nadi Healthcare · Project Highlight</SectionLabel>
 
-        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4">
+        <h1 className="font-display text-5xl sm:text-7xl font-black uppercase leading-[0.95] tracking-tight mb-4">
           MyPharma Mobile and Dashboard
         </h1>
 
-        <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mb-10">
+        <p className="text-cream/85 text-sm sm:text-base leading-relaxed max-w-2xl mb-10">
           End-to-end medical e-commerce platform for purchasing
           over-the-counter and prescription medications, paired with an admin
           dashboard for pharmacy operations.
@@ -124,11 +124,11 @@ export default function NadiHighlightProjectPage() {
           {["E-Commerce", "Pharma", "Product Design"].map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-xs font-medium rounded-full border"
+              className="px-3 py-1 text-xs font-bold uppercase tracking-wider border"
               style={{
                 color: accent,
                 backgroundColor: `${accent}18`,
-                borderColor: `${accent}35`,
+                borderColor: `${accent}55`,
               }}
             >
               {tag}
@@ -136,7 +136,7 @@ export default function NadiHighlightProjectPage() {
           ))}
         </div>
 
-        <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 border border-white/[0.08] mb-12">
+        <div className="relative w-full overflow-hidden bg-plum-deep mb-12">
           <Image
             src="/project-nadi.png"
             alt="MyPharma mobile app and dashboard screens"
@@ -151,12 +151,12 @@ export default function NadiHighlightProjectPage() {
           {meta.map((item) => (
             <div
               key={item.label}
-              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-4 sm:p-5"
+              className="bg-plum-deep p-4 sm:p-5"
             >
-              <p className="text-[11px] sm:text-xs text-gray-500 uppercase tracking-wider mb-1.5">
+              <p className="text-[11px] sm:text-xs text-cream/75 uppercase tracking-wider mb-1.5">
                 {item.label}
               </p>
-              <p className="text-sm sm:text-base font-semibold text-white">{item.value}</p>
+              <p className="text-sm sm:text-base font-semibold text-cream">{item.value}</p>
             </div>
           ))}
         </div>
@@ -173,7 +173,7 @@ export default function NadiHighlightProjectPage() {
 
         <section>
           <SectionLabel>Full Project Highlight</SectionLabel>
-          <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 border border-white/[0.08]">
+          <div className="relative w-full overflow-hidden bg-plum-deep">
             <Image
               src="/nadi-mypharma-highlight.jpg"
               alt="MyPharma full project highlight — homepage, search, product detail, cart, checkout, refund status, prescription dashboard, refund dashboard and customer subscription screens"

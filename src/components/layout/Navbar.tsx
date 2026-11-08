@@ -2,17 +2,22 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
+  { label: "Work", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
+
+const resumeProps = {
+  href: "/resume.pdf",
+  download: "Resume - Andi Yusup Sinaga.pdf",
+  target: "_blank",
+  rel: "noopener noreferrer",
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,6 +25,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -37,61 +43,51 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || mobileOpen
-          ? "bg-[#0a0a0f]/85 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/30"
-          : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 text-cream transition-colors duration-300 ${
+        scrolled || mobileOpen ? "bg-plum" : "bg-transparent"
+      }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="#about"
-          className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#652b4e] rounded-xl"
-        >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#652b4e] via-[#482439] to-[#36162a] flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-[#482439]/25 group-hover:shadow-[#482439]/40 transition-shadow duration-300 shrink-0">
+      <nav
+        aria-label="Primary"
+        className="mx-auto flex h-20 max-w-screen-2xl items-center justify-between px-6 md:px-10"
+      >
+        <a href="#about" className="flex items-center gap-3">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-plum-deep font-display text-base font-black">
             AS
-          </div>
-          <span className="font-bold text-white text-base sm:text-lg tracking-tight">
-            Andi<span className="text-gray-400 font-normal"> Sinaga</span>
           </span>
-        </Link>
+          <span className="text-sm font-bold uppercase tracking-widest">Andi Sinaga</span>
+        </a>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="relative px-3.5 py-2 text-sm text-gray-300 hover:text-white transition-colors duration-200 font-medium group rounded-lg"
+              className="text-sm font-medium uppercase tracking-wide transition-colors hover:text-coral"
             >
               {link.label}
-              <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] group-hover:w-3/4 transition-all duration-300 rounded-full" />
             </a>
           ))}
         </div>
 
-        {/* CTA Desktop */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#contact"
-            className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] rounded-xl hover:shadow-lg hover:shadow-[#482439]/25 hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Let&rsquo;s Talk
-          </a>
-        </div>
+        <a
+          {...resumeProps}
+          className="hidden border-2 border-cream px-6 py-2 text-sm font-bold uppercase tracking-wider transition-colors hover:bg-cream hover:text-plum md:inline-flex"
+        >
+          Resume
+        </a>
 
-        {/* Mobile menu toggle */}
         <button
+          type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden w-11 h-11 flex items-center justify-center rounded-xl hover:bg-white/10 active:bg-white/15 transition-colors text-white focus:outline-none focus:ring-2 focus:ring-[#652b4e]/50"
+          className="flex h-11 w-11 items-center justify-center md:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
 
-      {/* Mobile Menu Dropdown */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -99,37 +95,26 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden overflow-hidden bg-[#0a0a0f]/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl"
+            className="overflow-hidden border-b-4 border-coral bg-plum md:hidden"
           >
-            <div className="max-w-6xl mx-auto px-6 sm:px-8 py-4 flex flex-col gap-1">
-              {navLinks.map((link, i) => (
-                <motion.a
+            <div className="flex flex-col px-6 pb-6">
+              {navLinks.map((link) => (
+                <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04, duration: 0.25 }}
-                  className="px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 rounded-xl transition-all flex items-center justify-between"
+                  className="border-t border-cream/20 py-3 font-display text-3xl font-extrabold uppercase tracking-tight transition-colors hover:text-coral"
                 >
-                  <span>{link.label}</span>
-                  <ArrowUpRight className="w-4 h-4 text-gray-500" />
-                </motion.a>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="mt-2 pt-3 border-t border-white/10"
-              >
-                <a
-                  href="#contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center w-full py-3.5 text-base font-semibold text-white bg-gradient-to-r from-[#652b4e] via-[#482439] to-[#36162a] rounded-xl hover:shadow-lg hover:shadow-[#482439]/25 active:opacity-90 transition-all"
-                >
-                  Let&rsquo;s Talk
+                  {link.label}
                 </a>
-              </motion.div>
+              ))}
+              <a
+                {...resumeProps}
+                onClick={() => setMobileOpen(false)}
+                className="mt-4 border-2 border-cream py-3 text-center text-sm font-bold uppercase tracking-wider transition-colors hover:bg-cream hover:text-plum"
+              >
+                Resume
+              </a>
             </div>
           </motion.div>
         )}

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: ["/thumbnail-nadi-refund.png"] },
 };
 
-const accent = "#0891b2";
+const accent = "#ff6f61";
 
 const meta = [
   { label: "Role", value: "UX Designer" },
@@ -70,7 +70,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2 mb-4 sm:mb-5">
       <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: accent }} />
-      <span className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider">
+      <span className="text-xs sm:text-sm font-semibold text-cream/85 uppercase tracking-wider">
         {children}
       </span>
     </div>
@@ -79,11 +79,11 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function NadiRefundProjectPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f] text-white">
+    <main className="min-h-screen bg-plum text-cream">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 py-12 sm:py-20">
         <Link
           href="/#projects"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-8 sm:mb-12"
+          className="inline-flex items-center gap-2 text-sm text-cream/85 hover:text-coral transition-colors mb-8 sm:mb-12"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to projects
@@ -91,11 +91,11 @@ export default function NadiRefundProjectPage() {
 
         <SectionLabel>Nadi Healthcare · UX Case Study</SectionLabel>
 
-        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4">
+        <h1 className="font-display text-5xl sm:text-7xl font-black uppercase leading-[0.95] tracking-tight mb-4">
           Nadi Refund System UX Case
         </h1>
 
-        <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mb-10">
+        <p className="text-cream/85 text-sm sm:text-base leading-relaxed max-w-2xl mb-10">
           Transforming traditional medical service refund workflows into a
           seamless semi-automated experience.
         </p>
@@ -104,11 +104,11 @@ export default function NadiRefundProjectPage() {
           {["Healthcare", "Mobile App", "UX Research"].map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-xs font-medium rounded-full border"
+              className="px-3 py-1 text-xs font-bold uppercase tracking-wider border"
               style={{
                 color: accent,
                 backgroundColor: `${accent}18`,
-                borderColor: `${accent}35`,
+                borderColor: `${accent}55`,
               }}
             >
               {tag}
@@ -116,7 +116,7 @@ export default function NadiRefundProjectPage() {
           ))}
         </div>
 
-        <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 border border-white/[0.08] mb-12">
+        <div className="relative w-full overflow-hidden bg-plum-deep mb-12">
           <Image
             src="/thumbnail-nadi-refund.png"
             alt="Nadi refund system screens"
@@ -131,19 +131,19 @@ export default function NadiRefundProjectPage() {
           {meta.map((item) => (
             <div
               key={item.label}
-              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-4 sm:p-5"
+              className="bg-plum-deep p-4 sm:p-5"
             >
-              <p className="text-[11px] sm:text-xs text-gray-500 uppercase tracking-wider mb-1.5">
+              <p className="text-[11px] sm:text-xs text-cream/75 uppercase tracking-wider mb-1.5">
                 {item.label}
               </p>
-              <p className="text-sm sm:text-base font-semibold text-white">{item.value}</p>
+              <p className="text-sm sm:text-base font-semibold text-cream">{item.value}</p>
             </div>
           ))}
         </div>
 
         <section className="mb-16 sm:mb-20">
           <SectionLabel>Project Overview</SectionLabel>
-          <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed max-w-3xl">
+          <div className="space-y-4 text-sm sm:text-base text-cream/85 leading-relaxed max-w-3xl">
             <p>
               NADI strives to enhance healthcare delivery through a digital
               platform for better and more accessible healthcare. Already
@@ -161,18 +161,18 @@ export default function NadiRefundProjectPage() {
         </section>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-16 sm:mb-20">
-          <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 sm:p-7">
+          <div className="bg-plum-deep p-5 sm:p-7">
             <h3 className="text-lg sm:text-xl font-bold mb-3">The Problem</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-cream/85 leading-relaxed">
               The existing refund procedure was fully manual: WhatsApp for
               communication and Microsoft Excel for data storage. It was error
               prone, difficult to manage, and made user information hard to
               find.
             </p>
           </div>
-          <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 sm:p-7">
+          <div className="bg-plum-deep p-5 sm:p-7">
             <h3 className="text-lg sm:text-xl font-bold mb-3">The Goal</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-cream/85 leading-relaxed">
               Make the procedure semi-manual so admins can easily reach users,
               the system stores the data, and a step-by-step flow (using the
               Zeigarnik effect) shows the right information to both customers
@@ -183,7 +183,7 @@ export default function NadiRefundProjectPage() {
 
         <section className="mb-16 sm:mb-20">
           <SectionLabel>My Design Process</SectionLabel>
-          <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-3xl mb-6">
+          <p className="text-sm sm:text-base text-cream/85 leading-relaxed max-w-3xl mb-6">
             I gathered information from the team using the existing procedure:
             how they used it, what was difficult, and how they thought it could
             be better. I aligned with the engineering team on constraints and
@@ -194,7 +194,7 @@ export default function NadiRefundProjectPage() {
             {process.map((step, i) => (
               <span
                 key={step}
-                className="px-4 py-2 text-xs sm:text-sm font-medium rounded-full border border-white/10 bg-white/[0.03] text-gray-200"
+                className="px-4 py-2 text-xs sm:text-sm font-bold border border-cream/30 bg-plum-deep text-cream/85"
               >
                 <span style={{ color: accent }} className="mr-1.5 font-semibold">
                   {i + 1}
@@ -206,22 +206,22 @@ export default function NadiRefundProjectPage() {
         </section>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-16 sm:mb-20">
-          <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 sm:p-7">
+          <div className="bg-plum-deep p-5 sm:p-7">
             <h3 className="text-lg sm:text-xl font-bold mb-4">Pain Points</h3>
             <ul className="space-y-2.5">
               {painPoints.map((item) => (
-                <li key={item} className="flex gap-2.5 text-sm text-gray-400 leading-relaxed">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-red-400/80 shrink-0" />
+                <li key={item} className="flex gap-2.5 text-sm text-cream/85 leading-relaxed">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-cream/70 shrink-0" />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 sm:p-7">
+          <div className="bg-plum-deep p-5 sm:p-7">
             <h3 className="text-lg sm:text-xl font-bold mb-4">Gains</h3>
             <ul className="space-y-2.5">
               {gains.map((item) => (
-                <li key={item} className="flex gap-2.5 text-sm text-gray-400 leading-relaxed">
+                <li key={item} className="flex gap-2.5 text-sm text-cream/85 leading-relaxed">
                   <span className="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: accent }} />
                   {item}
                 </li>
@@ -232,7 +232,7 @@ export default function NadiRefundProjectPage() {
 
         <section className="mb-16 sm:mb-20">
           <SectionLabel>Problem Solving</SectionLabel>
-          <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-3xl">
+          <p className="text-sm sm:text-base text-cream/85 leading-relaxed max-w-3xl">
             All refund data needs to live in one place. The system can ask
             users for their bank account, let them input it, and surface it on
             the admin screen. Together with the other teams, I designed a new
@@ -246,12 +246,12 @@ export default function NadiRefundProjectPage() {
             {ideations.map((item) => (
               <div
                 key={item.title}
-                className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 sm:p-6"
+                className="bg-plum-deep p-5 sm:p-6"
               >
-                <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
+                <h3 className="text-base sm:text-lg font-semibold text-cream mb-2">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">{item.body}</p>
+                <p className="text-xs sm:text-sm text-cream/85 leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function NadiRefundProjectPage() {
 
         <section>
           <SectionLabel>Full Case Study</SectionLabel>
-          <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 border border-white/[0.08]">
+          <div className="relative w-full overflow-hidden bg-plum-deep">
             <Image
               src="/nadi-refund-case-study-v2.jpg"
               alt="Nadi refund system full case study — affinity diagram, pain points, user flow, lo-fi and final designs for mobile and admin dashboard"

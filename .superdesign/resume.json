@@ -1,0 +1,24 @@
+{
+  "targets": {
+    "/": {
+      "projectId": "6ea02aba-0d9d-465b-892c-50ab78820247",
+      "drafts": {
+        "A: The Long Read": "d5a45dc8-fa20-4acf-aa04-6cdd098a44f3",
+        "B: Annotated Spec": "c2944556-1e75-440a-ab2c-c3dc118c650d",
+        "C: Full Colour": "e82edeec-5f68-45f8-85b3-d3c4623484ad"
+      },
+      "activeDraftId": "e82edeec-5f68-45f8-85b3-d3c4623484ad",
+      "contextFiles": [
+        "src/app/globals.css",
+        "src/lib/site.ts",
+        "src/components/sections/HeroSection.tsx"
+      ],
+      "referenceIds": [
+        "as-monogram",
+        "andi-portrait",
+        "work-pashouses",
+        "work-nadi-refund"
+      ]
+    }
+  }
+}

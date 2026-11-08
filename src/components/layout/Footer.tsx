@@ -1,65 +1,60 @@
-import { Heart } from "lucide-react";
 import { socialLinks } from "@/lib/site";
+
+const footerLinks = [
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default async function Footer() {
   "use cache";
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/[0.06] overflow-hidden">
-      {/* Gradient top line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#652b4e]/50 to-transparent" />
-
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 py-8 sm:py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
-          {/* Brand */}
+    <footer className="border-t-4 border-coral bg-plum text-cream">
+      <div className="mx-auto flex max-w-screen-2xl flex-col gap-8 px-6 py-10 md:px-10">
+        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#652b4e] via-[#482439] to-[#36162a] flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-[#482439]/25 shrink-0">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-plum-deep font-display text-base font-black">
               AS
-            </div>
-            <div className="text-left">
-              <p className="font-semibold text-white text-sm">Andi Sinaga</p>
-              <p className="text-gray-500 text-xs">UI/UX Product Designer</p>
+            </span>
+            <div>
+              <p className="text-sm font-bold">Andi Sinaga</p>
+              <p className="text-sm text-cream/80">UI/UX Product Designer</p>
             </div>
           </div>
 
-          {/* Nav Links */}
-          <div className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-6 gap-y-2">
-            {["About", "Projects", "Experience", "Education", "Skills", "Contact"].map((link) => (
+          <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2">
+            {footerLinks.map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium uppercase tracking-wide transition-colors hover:text-coral"
               >
-                {link}
+                {link.label}
               </a>
             ))}
-          </div>
+          </nav>
+        </div>
 
-          {/* Social */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+        <div className="flex flex-col justify-between gap-2 border-t border-cream/20 pt-6 text-sm text-cream/80 sm:flex-row">
+          <p>&copy; {year} Andi Sinaga. All rights reserved.</p>
+          <div className="flex gap-6">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 text-xs font-medium text-gray-400 bg-white/5 border border-white/10 rounded-lg hover:text-white hover:border-white/20 active:bg-white/10 transition-all duration-200"
+                className="transition-colors hover:text-coral"
               >
                 {social.label}
               </a>
             ))}
           </div>
-        </div>
-
-        {/* Divider */}
-        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <p className="text-gray-500 text-xs sm:text-sm">
-            &copy; {year} Andi Sinaga. All rights reserved.
-          </p>
-          <p className="flex items-center justify-center gap-1.5 text-gray-500 text-xs sm:text-sm">
-            Crafted with <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" /> and too much coffee
-          </p>
         </div>
       </div>
     </footer>

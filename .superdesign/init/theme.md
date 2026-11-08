@@ -1,0 +1,100 @@
+# Theme
+
+Tailwind v4 via `@theme inline` in globals.css (no tailwind.config). Font: Plus Jakarta Sans 400-800. Dark near-black #0a0a0f, plum accents #652b4e / #482439 / #36162a, rose highlight #a05070. Glass cards: white at 3-5% with white/10 borders, rounded-2xl/3xl, blurred gradient orbs.
+
+## `src/app/globals.css`
+
+```css
+@import "tailwindcss";
+
+@theme inline {
+  --breakpoint-xs: 350px;
+  --color-background: #0a0a0f;
+  --color-foreground: #ffffff;
+  --color-card: #111118;
+  --color-card-hover: #16161d;
+  --color-accent: #652b4e;
+  --color-accent-secondary: #482439;
+  --color-muted: #6b7280;
+  --font-sans: var(--font-plus-jakarta);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a05070 0%, #652b4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 40px rgba(72, 36, 57, 0.3), 0 0 80px rgba(54, 22, 42, 0.2);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Noise overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
+}
+```

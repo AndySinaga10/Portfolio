@@ -16,8 +16,8 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 80,
-          background: "linear-gradient(135deg, #0a0a0f 0%, #2a1322 60%, #652b4e 100%)",
-          color: "white",
+          background: "#4a1538",
+          color: "#fff3e6",
         }}
       >
         <div
@@ -28,7 +28,8 @@ export default function OpengraphImage() {
             width: 96,
             height: 96,
             borderRadius: 24,
-            background: "linear-gradient(135deg, #652b4e, #36162a)",
+            background: "#ff6f61",
+            color: "#4a1538",
             fontSize: 44,
             fontWeight: 700,
             marginBottom: 40,
@@ -37,8 +38,8 @@ export default function OpengraphImage() {
           AS
         </div>
         <div style={{ fontSize: 84, fontWeight: 800, lineHeight: 1.05 }}>{person.name}</div>
-        <div style={{ fontSize: 40, color: "#d1d5db", marginTop: 24 }}>{person.jobTitle}</div>
-        <div style={{ fontSize: 28, color: "#9ca3af", marginTop: 16 }}>
+        <div style={{ fontSize: 40, color: "#ff6f61", marginTop: 24 }}>{person.jobTitle}</div>
+        <div style={{ fontSize: 28, color: "#f0e1d0", marginTop: 16 }}>
           Product Design · UX Research · Design Systems
         </div>
       </div>
