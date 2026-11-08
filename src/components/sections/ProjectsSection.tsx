@@ -63,6 +63,31 @@ const moreWork = [
   },
 ];
 
+// Live products open the real site in a new tab; there is no case study page for them.
+const liveProducts = [
+  {
+    company: "Live product",
+    title: "Project Lead at Lorry Saudi Arabia",
+    teaser:
+      "Logistics platform for transportation companies to manage fleets, drivers, trips and shipments from dispatch to final delivery.",
+    thumbnail: "/work/lorry-saudi-arabia.jpg",
+    thumbnailAlt:
+      "Lorry logistics platform homepage showing a shipment route map and a driver trip card",
+    href: "https://lorrysa.com",
+    cta: "Visit lorrysa.com",
+  },
+  {
+    company: "Live product",
+    title: "Project Lead at Dog Directory",
+    teaser:
+      "Australia's dog-friendly guide: find dog-friendly cafes, parks, beaches and services, and compare dog food prices across retailers.",
+    thumbnail: "/work/dog-directory.jpg",
+    thumbnailAlt: "Dog Directory homepage with a dog food price comparison shown on three phones",
+    href: "https://dog.directory",
+    cta: "Visit dog.directory",
+  },
+];
+
 export default function ProjectsSection() {
   return (
     <section id="projects" className="bg-cream text-plum">
@@ -122,6 +147,41 @@ export default function ProjectsSection() {
               </Link>
             );
           })}
+        </div>
+
+        <h3 className="mb-10 mt-24 border-t-4 border-plum pt-6 text-3xl font-extrabold uppercase tracking-tight md:text-4xl lg:mt-32">
+          Live products
+        </h3>
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8">
+          {liveProducts.map((project) => (
+            <a
+              key={project.href}
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col"
+            >
+              <div className="relative mb-5 aspect-[846/471] overflow-hidden bg-plum">
+                <Image
+                  src={project.thumbnail}
+                  alt={project.thumbnailAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                />
+              </div>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest">{project.company}</p>
+              <h4 className="mb-3 text-3xl font-extrabold leading-tight transition-colors group-hover:text-coral-ink">
+                {project.title}
+              </h4>
+              <p className="mb-4 text-lg leading-relaxed">{project.teaser}</p>
+              <span className="mt-auto inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
+                {project.cta}
+                <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                <span className="sr-only">(opens in a new tab)</span>
+              </span>
+            </a>
+          ))}
         </div>
 
         <h3 className="mb-10 mt-24 border-t-4 border-plum pt-6 text-3xl font-extrabold uppercase tracking-tight md:text-4xl lg:mt-32">
