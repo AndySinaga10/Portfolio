@@ -107,6 +107,15 @@ const jsonLd = {
       additionalName: "Yusup",
       familyName: "Sinaga",
       jobTitle: person.jobTitle,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Jakarta",
+        addressCountry: "ID",
+      },
+      alumniOf: [
+        { "@type": "CollegeOrUniversity", name: "University of Indonesia" },
+        { "@type": "CollegeOrUniversity", name: "State Polytechnic of Jakarta" },
+      ],
       description: siteDescription,
       url: SITE_URL,
       image: `${SITE_URL}/Andi.png`,
@@ -128,7 +137,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${satoshi.variable} ${cabinetGrotesk.variable} h-full antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning className={`${satoshi.variable} ${cabinetGrotesk.variable} h-full antialiased`}>
       <body
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-cream text-plum overflow-x-hidden selection:bg-coral selection:text-plum"

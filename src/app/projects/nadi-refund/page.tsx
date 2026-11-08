@@ -2,21 +2,24 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import CaseStudyExtras from "@/components/product/CaseStudyExtras";
+import { getCaseStudy } from "@/data/caseStudies";
+
+const study = getCaseStudy("nadi-refund");
+const ogTitle = "Nadi Refund System UX Case Study | Andi Yusup Sinaga";
 
 export const metadata: Metadata = {
-  title: "Nadi Refund System — UX Case Study",
-  description:
-    "UX case study by Andi Yusup Sinaga: transforming traditional medical service refund workflows into a seamless semi-automated experience at Nadi Healthcare.",
+  title: "Nadi Refund System UX Case Study",
+  description: study.description,
   alternates: { canonical: "/projects/nadi-refund" },
   openGraph: {
     type: "article",
     url: "/projects/nadi-refund",
-    title: "Nadi Refund System UX Case Study | Andi Yusup Sinaga",
-    description:
-      "Transforming traditional medical service refund workflows into a seamless semi-automated experience.",
-    images: [{ url: "/thumbnail-nadi-refund.png", alt: "Nadi refund system UX case study" }],
+    title: ogTitle,
+    description: study.description,
+    images: [{ url: study.image, width: 1200, height: 630, alt: study.imageAlt }],
   },
-  twitter: { card: "summary_large_image", images: ["/thumbnail-nadi-refund.png"] },
+  twitter: { card: "summary_large_image", title: ogTitle, images: [study.image] },
 };
 
 const accent = "#ff6f61";
@@ -66,21 +69,25 @@ const ideations = [
   },
 ];
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({
+  as: Tag = "h2",
+  children,
+}: {
+  as?: "h2" | "p";
+  children: React.ReactNode;
+}) {
   return (
-    <div className="flex items-center gap-2 mb-4 sm:mb-5">
-      <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: accent }} />
-      <span className="text-xs sm:text-sm font-semibold text-cream/85 uppercase tracking-wider">
-        {children}
-      </span>
-    </div>
+    <Tag className="mb-4 flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-wider text-cream/85 sm:mb-5 sm:text-sm">
+      <span className="h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: accent }} />
+      {children}
+    </Tag>
   );
 }
 
 export default function NadiRefundProjectPage() {
   return (
     <main className="min-h-screen bg-plum text-cream">
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 py-12 sm:py-20">
+      <div className="max-w-5xl mx-auto px-6 sm:px-8 pt-28 pb-12 sm:pt-32 sm:pb-20">
         <Link
           href="/#projects"
           className="inline-flex items-center gap-2 text-sm text-cream/85 hover:text-coral transition-colors mb-8 sm:mb-12"
@@ -89,7 +96,7 @@ export default function NadiRefundProjectPage() {
           Back to projects
         </Link>
 
-        <SectionLabel>Nadi Healthcare · UX Case Study</SectionLabel>
+        <SectionLabel as="p">Nadi Healthcare · UX Case Study</SectionLabel>
 
         <h1 className="font-display text-5xl sm:text-7xl font-black uppercase leading-[0.95] tracking-tight mb-4">
           Nadi Refund System UX Case
@@ -119,7 +126,7 @@ export default function NadiRefundProjectPage() {
         <div className="relative w-full overflow-hidden bg-plum-deep mb-12">
           <Image
             src="/thumbnail-nadi-refund.png"
-            alt="Nadi refund system screens"
+            alt={study.imageAlt}
             width={1600}
             height={900}
             className="w-full h-auto object-cover"
@@ -270,6 +277,8 @@ export default function NadiRefundProjectPage() {
             />
           </div>
         </section>
+
+        <CaseStudyExtras slug="nadi-refund" />
       </div>
     </main>
   );

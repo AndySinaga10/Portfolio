@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const navLinks = [
-  { label: "Work", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Education", href: "/#education" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const resumeProps = {
@@ -51,22 +52,22 @@ export default function Navbar() {
         aria-label="Primary"
         className="mx-auto flex h-20 max-w-screen-2xl items-center justify-between px-6 md:px-10"
       >
-        <a href="#about" className="flex items-center gap-3">
+        <Link href="/#about" className="flex items-center gap-3">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-plum-deep font-display text-base font-black">
             AS
           </span>
           <span className="text-sm font-bold uppercase tracking-widest">Andi Sinaga</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="text-sm font-medium uppercase tracking-wide transition-colors hover:text-coral"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -99,14 +100,14 @@ export default function Navbar() {
           >
             <div className="flex flex-col px-6 pb-6">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="border-t border-cream/20 py-3 font-display text-3xl font-extrabold uppercase tracking-tight transition-colors hover:text-coral"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 {...resumeProps}

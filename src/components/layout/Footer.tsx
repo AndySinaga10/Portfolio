@@ -1,12 +1,13 @@
+import Link from "next/link";
 import { socialLinks } from "@/lib/site";
 
 const footerLinks = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Work", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Education", href: "/#education" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default async function Footer() {
@@ -22,26 +23,26 @@ export default async function Footer() {
               AS
             </span>
             <div>
-              <p className="text-sm font-bold">Andi Sinaga</p>
+              <p className="text-sm font-bold">Andi Yusup Sinaga</p>
               <p className="text-sm text-cream/80">UI/UX Product Designer</p>
             </div>
           </div>
 
           <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2">
             {footerLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className="text-sm font-medium uppercase tracking-wide transition-colors hover:text-coral"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
 
         <div className="flex flex-col justify-between gap-2 border-t border-cream/20 pt-6 text-sm text-cream/80 sm:flex-row">
-          <p>&copy; {year} Andi Sinaga. All rights reserved.</p>
+          <p>&copy; {year} Andi Yusup Sinaga. All rights reserved.</p>
           <div className="flex gap-6">
             {socialLinks.map((social) => (
               <a

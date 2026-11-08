@@ -19,4 +19,4 @@ export const person = {
 export const siteTitle = `${person.name} (Andi Sinaga) — Senior UI/UX Product Designer`;
 
 export const siteDescription =
-  "Andi Yusup Sinaga (Andi Sinaga) is a Senior UI/UX Product Designer with 9+ years of experience in user-centered design, prototyping, and design systems. Explore case studies for Pashouses, Nadi Healthcare, and National Logistic Ecosystem.";
+  "Andi Yusup Sinaga is a Senior UI/UX Product Designer in Jakarta with 9+ years in user research, prototyping and design systems. Explore the case studies.";

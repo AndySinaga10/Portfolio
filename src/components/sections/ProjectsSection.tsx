@@ -10,6 +10,7 @@ const caseStudies = [
     teaser: "Public website and internal mobile app featuring canvassing tracker and usability testing reports.",
     tags: ["Web App", "Mobile App", "Usability Testing"],
     thumbnail: "/thumbnail-pashouses.png",
+    thumbnailAlt: "Pashouses DashSales inventory, canvassing tracker and KPR calculator shown on three phones",
     href: "/projects/pashouses",
   },
   {
@@ -18,6 +19,7 @@ const caseStudies = [
     teaser: "Transforming traditional medical service refund workflows into a seamless semi-automated experience.",
     tags: ["Healthcare", "Mobile App", "UX Research"],
     thumbnail: "/thumbnail-nadi-refund.png",
+    thumbnailAlt: "Nadi Refund System UX case study cover with refund status and pharmacy screens on four phones",
     href: "/projects/nadi-refund",
   },
   {
@@ -26,6 +28,7 @@ const caseStudies = [
     teaser: "End-to-end medical e-commerce platform for purchasing over-the-counter and prescription medications.",
     tags: ["E-Commerce", "Pharma", "Product Design"],
     thumbnail: "/project-nadi.png",
+    thumbnailAlt: "MyPharma medical e-commerce app screens on three phones, built at Nadi Healthcare",
     href: "/projects/nadi-highlight",
   },
 ];
@@ -37,6 +40,7 @@ const moreWork = [
     teaser: "Interactive high-fidelity prototyping and usability testing to validate user flows and stress points.",
     isFigmaPrototype: true,
     thumbnail: "/mypharma-proto.png",
+    thumbnailAlt: "MyPharma mobile app prototype homepage shown on a phone",
     href: "https://www.figma.com/proto/t5RYxCI2jBDkibPeoBbqly/MyPharma?page-id=0%3A1&node-id=10668-22517&starting-point-node-id=9270%3A50419&t=WCuLU1hc0AVaewNI-1&fuid=1519166877991708250",
   },
   {
@@ -45,6 +49,7 @@ const moreWork = [
     teaser: "Nationwide logistics ecosystem app covering booking transactions and cargo documentation.",
     isFigmaPrototype: true,
     thumbnail: "/Mobile-NLE.png",
+    thumbnailAlt: "National Logistics Ecosystem mobile app prototype with a map of Indonesia on a phone",
     href: "https://www.figma.com/proto/9K22neTq3AJiY9YZ4sRrTI/Mobile-NLE?page-id=0%3A1&node-id=2-80271&viewport=1647%2C1158%2C0.11&t=ae2U95m6ipWg1HSD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A80271&show-proto-sidebar=1",
   },
   {
@@ -53,6 +58,7 @@ const moreWork = [
     teaser: "Solving complex multi-destination tracking and logistical data workflows in a government ecosystem.",
     isFigmaPrototype: false,
     thumbnail: "/NLE-UX.png",
+    thumbnailAlt: "NLE multi-destination UX case study cover with logistics tracking screens on phones",
     href: "https://drive.google.com/file/d/1YhNFQ42cHVETDVe_RYhKYxwqbP0fZNHe/view",
   },
 ];
@@ -80,7 +86,7 @@ export default function ProjectsSection() {
                   >
                     <Image
                       src={project.thumbnail}
-                      alt=""
+                      alt={project.thumbnailAlt}
                       fill
                       sizes="(max-width: 1024px) 100vw, 66vw"
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
@@ -129,7 +135,7 @@ export default function ProjectsSection() {
                 <div className="relative mb-5 aspect-[846/471] overflow-hidden bg-plum">
                   <Image
                     src={project.thumbnail}
-                    alt=""
+                    alt={project.thumbnailAlt}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"

@@ -18,24 +18,24 @@ export default function HeroSection() {
         id="about"
         className="relative isolate flex flex-col overflow-hidden bg-plum text-cream lg:block lg:h-svh lg:min-h-[720px]"
       >
-        {/* Poster word: sits behind the portrait */}
+        {/* Poster word: sits behind the portrait. It and the portrait only slide in, since fading them delays the largest paint. */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 24 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, ease }}
           className="z-10 pt-28 text-center lg:absolute lg:inset-x-0 lg:top-[46%] lg:-translate-y-3/4 lg:pt-0"
         >
           <h1 className="hero-word whitespace-nowrap font-black uppercase text-cream-dark">
             <span className="sr-only">Andi Yusup Sinaga, Senior UI/UX </span>
-            <span className="block">Product</span>
+            <span className="block">Product</span>{" "}
             <span className="block">Designer</span>
           </h1>
         </motion.div>
 
         {/* Portrait cut-out. The source PNG has about 20% empty space on top. */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 40 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease }}
           className="relative z-20 mx-auto -mt-[22vw] aspect-[9/16] w-[min(78vw,26rem)] lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:h-[79%] lg:w-auto lg:-translate-x-1/2"
         >
@@ -60,7 +60,7 @@ export default function HeroSection() {
             Available for work
           </span>
           <p className="mt-4 text-sm font-medium text-cream/85">
-            Senior UI/UX Product Designer &middot; Jakarta, Indonesia
+            Hi, I&rsquo;m Andi Yusup Sinaga, based in Jakarta, Indonesia
           </p>
           <p className="mt-3 text-[clamp(1.5rem,2.4vw,2.25rem)] font-medium leading-tight">
             I design products for complicated systems, and I know how they get built.
