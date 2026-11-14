@@ -29,6 +29,12 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+// Screenshot of the homepage hero. Give the file a new name when replacing it,
+// because WhatsApp, LinkedIn and others cache a share image by its URL.
+const ogImage = "/og/home.jpg";
+const ogImageAlt =
+  "Andi Yusup Sinaga, Senior UI/UX Product Designer, standing in front of the words Product Designer";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -61,11 +67,13 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     locale: "en_US",
+    images: [{ url: ogImage, width: 1200, height: 630, alt: ogImageAlt }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
+    images: [ogImage],
   },
   robots: {
     index: true,
